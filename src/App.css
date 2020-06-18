@@ -1,4 +1,16 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 .App {
+  height: 100%;
+  width: 100%;
   text-align: center;
 }
 
@@ -35,4 +47,108 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@-webkit-keyframes diagonal-slide {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    left: 30%;
+    /* top: 100px; */
+  }
+}
+
+@keyframes diagonal-slide {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    left: 25%;
+    /* top: 100px; */
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.flex-raw-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+/* .flex-raw-container > div {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  margin: 10px;
+} */
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.box {
+  background: #ffffff;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+}
+
+.portfolio-container {
+  height: 70%;
+  width: 22%;
+  background-color: #fff;
+}
+
+.portfolio-container-animation {
+  animation: diagonal-slide 3s;
+  left: 25%;
+  position: relative;
+  z-index: 0;
+}
+
+.cv-container {
+  height: 96%;
+  width: 52%;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.contacts-about {
+  height: 96%;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-container {
+  height: 54%;
+  width: 100%;
+  background-color: #fff;
+}
+
+.contacts-container {
+  height: 43%;
+  width: 100%;
+  background-color: #fff;
 }
