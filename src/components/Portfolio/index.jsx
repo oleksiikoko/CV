@@ -35,7 +35,7 @@ const Portfolio = () => {
               </button>
               <button className="portfolio__button w33p portfolio__button--purple">
                 <img src={HerokuSvg} alt="" />
-                <HerokuSvg />
+                {/* <HerokuSvg /> */}
                 <p>Deploy</p>
               </button>
             </div>
