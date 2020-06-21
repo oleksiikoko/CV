@@ -1,0 +1,99 @@
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+
+.portfolio {
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__name {
+    text-align: center;
+  }
+
+  &__button {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    background: none;
+    border: none;
+    border-bottom: 2px rgba(26, 26, 26, 0.6) solid;
+    cursor: pointer;
+
+    img {
+      height: 26px;
+      display: inline;
+    }
+
+    p {
+      padding: 5px 0 0 7px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.1);
+
+      width: 100px;
+      height: 100px;
+      margin-top: -50px;
+      margin-left: -50px;
+
+      /* Center the ripple */
+      top: 50%;
+      left: 50%;
+
+      animation: ripple 1s;
+      opacity: 0;
+    }
+
+    &:focus:not(:active)::after {
+      display: block;
+    }
+
+    &--blue:hover {
+      background-color: rgba(20, 131, 184, 0.15);
+      border-color: #0366d6;
+      color: #0366d6;
+    }
+
+    &--figma:hover {
+      background-color: rgba(243, 201, 1, 0.2);
+      border-color: #f3c901;
+      color: #f3c901;
+    }
+
+    &--purple:hover {
+      background-color: #f5dfff;
+      border-color: #7e57c2;
+      color: #7e57c2;
+    }
+
+    // color
+  }
+}
+
+// .button-container {
+//   display: flex;
+//   justify-content: space-between;
+//   text-align: justify; /* IE10-, Firefox 12-21 */
+//   text-align-last: justify;
+// }
