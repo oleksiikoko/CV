@@ -1,8 +1,8 @@
 import React from "react";
 
-import FigmaSvg from "assets/img/FigmaIcon.svg";
-import GitHubSvg from "assets/img/gitHub.svg";
-import HerokuSvg from "assets/img/heroku.svg";
+import { ReactComponent as FigmaSvg } from "assets/img/FigmaIcon.svg";
+import { ReactComponent as GitHubSvg } from "assets/img/gitHub.svg";
+import { ReactComponent as HerokuSvg } from "assets/img/heroku.svg";
 
 import "./Portfolio.scss";
 
@@ -26,16 +26,15 @@ const Portfolio = () => {
             <p className="portfolio__name">cv.io</p>
             <div className="button-container df">
               <button className="portfolio__button portfolio__button--figma  w33p">
-                <img src={FigmaSvg} alt="" />
+                <FigmaSvg />
                 <p>Maket</p>
               </button>
               <button className="portfolio__button w33p portfolio__button--blue">
-                <img src={GitHubSvg} alt="" />
+                <GitHubSvg />
                 <p>Code</p>
               </button>
               <button className="portfolio__button w33p portfolio__button--purple">
-                <img src={HerokuSvg} alt="" />
-                {/* <HerokuSvg /> */}
+                <HerokuSvg />
                 <p>Deploy</p>
               </button>
             </div>
