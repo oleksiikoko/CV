@@ -1,0 +1,110 @@
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+
+.portfolio {
+  &__button {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    background: none;
+    border: none;
+    border-bottom: 2px rgba(26, 26, 26, 0.6) solid;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+
+    svg {
+      height: 26px;
+      display: inline-block;
+
+      path {
+        transition: fill 0.2s ease;
+      }
+    }
+
+    p {
+      padding: 5px 0 0 7px;
+    }
+
+    &:hover {
+      font-weight: 550;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.1);
+
+      width: 100px;
+      height: 100px;
+      margin-top: -50px;
+      margin-left: -50px;
+
+      /* Center the ripple */
+      top: 50%;
+      left: 50%;
+
+      animation: ripple 1s;
+      opacity: 0;
+    }
+
+    &:focus:not(:active)::after {
+      display: block;
+    }
+
+    &--figma:hover {
+      background-color: rgba(243, 201, 1, 0.2);
+      border-color: #f3c901;
+      color: #f3c901;
+
+      svg {
+        path:first-child {
+          fill: #353535;
+        }
+      }
+    }
+
+    &--blue:hover {
+      background-color: rgba(20, 131, 184, 0.15);
+      border-color: #0366d6;
+      color: #0366d6;
+
+      svg {
+        path:first-child {
+          fill: #0366d6;
+        }
+      }
+    }
+
+    &--purple:hover {
+      background-color: #f5dfff;
+      border-color: #7e57c2;
+      color: #7e57c2;
+
+      svg {
+        path:first-child {
+          fill: #7e57c2;
+        }
+      }
+    }
+  }
+}
