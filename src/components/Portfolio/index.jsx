@@ -1,9 +1,5 @@
 import React from "react";
 
-import { ReactComponent as FigmaSvg } from "assets/img/FigmaIcon.svg";
-import { ReactComponent as GitHubSvg } from "assets/img/gitHub.svg";
-import { ReactComponent as HerokuSvg } from "assets/img/heroku.svg";
-
 import "./Portfolio.scss";
 import { PortfolioItem } from "components";
 
@@ -11,21 +7,21 @@ const Portfolio = ({ porfolioItems }) => {
   const porfolioItems1 = [
     [
       {
-        icon: <FigmaSvg />,
+        iconId: "figma",
         name: "Maket",
         url:
           "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
         color: "figma",
       },
       {
-        icon: <GitHubSvg />,
+        iconId: "gitHub",
         name: "Code",
         url:
           "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
         color: "blue",
       },
       {
-        icon: <HerokuSvg />,
+        iconId: "heroku",
         name: "Deploy",
         url:
           "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
@@ -34,7 +30,7 @@ const Portfolio = ({ porfolioItems }) => {
     ],
     [
       {
-        icon: <GitHubSvg />,
+        iconId: "gitHub",
         name: "Code",
         url:
           "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
@@ -43,18 +39,64 @@ const Portfolio = ({ porfolioItems }) => {
     ],
     [
       {
-        icon: <FigmaSvg />,
+        iconId: "figma",
         name: "Maket",
         url:
           "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
         color: "figma",
       },
       {
-        icon: <GitHubSvg />,
+        iconId: "gitHub",
         name: "Code",
         url:
           "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
         color: "blue",
+      },
+    ],
+    [
+      {
+        iconId: "figma",
+        name: "Maket",
+        url:
+          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
+        color: "figma",
+      },
+      {
+        iconId: "gitHub",
+        name: "Code",
+        url:
+          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
+        color: "blue",
+      },
+      {
+        iconId: "heroku",
+        name: "Deploy",
+        url:
+          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
+        color: "purple",
+      },
+    ],
+    [
+      {
+        iconId: "figma",
+        name: "Maket",
+        url:
+          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
+        color: "figma",
+      },
+      {
+        iconId: "gitHub",
+        name: "Code",
+        url:
+          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
+        color: "blue",
+      },
+      {
+        iconId: "heroku",
+        name: "Deploy",
+        url:
+          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
+        color: "purple",
       },
     ],
   ];
