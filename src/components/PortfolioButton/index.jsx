@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import className from "classnames";
 
 import getIcon from "utils/getIcon";
@@ -6,8 +7,8 @@ import getIcon from "utils/getIcon";
 import "./PortfolioButton.scss";
 
 const PortfolioButton = ({ url, color, iconId, name, countInLine }) => {
-  let Icon = getIcon(iconId);
-  // console.log(iconId);
+  const Icon = getIcon(iconId);
+
   return (
     <a
       href={url}
@@ -19,6 +20,14 @@ const PortfolioButton = ({ url, color, iconId, name, countInLine }) => {
       <p>{name}</p>
     </a>
   );
+};
+
+PortfolioButton.propTypes = {
+  url: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  iconId: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  countInLine: PropTypes.number.isRequired,
 };
 
 export default PortfolioButton;

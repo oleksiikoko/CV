@@ -1,114 +1,36 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import classNames from "classnames";
 
-import "./Portfolio.scss";
 import { PortfolioItem } from "components";
 
-const Portfolio = ({ porfolioItems }) => {
-  const porfolioItems1 = [
-    [
-      {
-        iconId: "figma",
-        name: "Maket",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "figma",
-      },
-      {
-        iconId: "gitHub",
-        name: "Code",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "blue",
-      },
-      {
-        iconId: "heroku",
-        name: "Deploy",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "purple",
-      },
-    ],
-    [
-      {
-        iconId: "gitHub",
-        name: "Code",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "blue",
-      },
-    ],
-    [
-      {
-        iconId: "figma",
-        name: "Maket",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "figma",
-      },
-      {
-        iconId: "gitHub",
-        name: "Code",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "blue",
-      },
-    ],
-    [
-      {
-        iconId: "figma",
-        name: "Maket",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "figma",
-      },
-      {
-        iconId: "gitHub",
-        name: "Code",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "blue",
-      },
-      {
-        iconId: "heroku",
-        name: "Deploy",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "purple",
-      },
-    ],
-    [
-      {
-        iconId: "figma",
-        name: "Maket",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "figma",
-      },
-      {
-        iconId: "gitHub",
-        name: "Code",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "blue",
-      },
-      {
-        iconId: "heroku",
-        name: "Deploy",
-        url:
-          "https://www.figma.com/file/RDlQxmX94XD7TZvDuRsB4j/CV?node-id=1%3A4",
-        color: "purple",
-      },
-    ],
-  ];
+import "./Portfolio.scss";
+
+const Portfolio = ({ mobile }) => {
+  const porfolioItems = useSelector((state) => state.portfolio.items);
+
+  const portfolioContainerClassNames = classNames("box", {
+    "portfolio-container": !mobile,
+    "portfolio-container--animation": !mobile,
+    "portfolio-container--mobile": mobile,
+  });
+  const titleClassName = classNames("title", {
+    "title--center": !mobile,
+    p20: mobile,
+  });
 
   return (
-    <div className="portfolio-container portfolio-container--animation box">
-      <p className="title title--center">Portfolio</p>
+    <div className={portfolioContainerClassNames}>
+      <p className={titleClassName}>Portfolio{mobile ? ":" : ""}</p>
       <div className="portfolio">
         <ul>
-          {porfolioItems1.map((item, index) => (
+          {porfolioItems.map((item, index) => (
             <li key={index}>
-              <PortfolioItem name="Component test" items={item} />
+              <PortfolioItem
+                name={item.projectName}
+                description={item.description}
+                links={item.links}
+              />
             </li>
           ))}
         </ul>
