@@ -29,8 +29,7 @@ const initialState = {
     },
     {
       projectName: "Joke generator",
-      description:
-        "Joke generator using API <a href='https://api.chucknorris.io/'>. Проекти написаний на vanilla.js",
+      description: `Joke generator using API <a href="https://api.chucknorris.io/">API</a>. Проекти написаний на vanilla.js`,
       links: [
         {
           iconId: "figma",

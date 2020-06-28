@@ -25,13 +25,12 @@ const Portfolio = ({ mobile }) => {
       <div className="portfolio">
         <ul>
           {porfolioItems.map((item, index) => (
-            <li key={index}>
-              <PortfolioItem
-                name={item.projectName}
-                description={item.description}
-                links={item.links}
-              />
-            </li>
+            <PortfolioItem
+              key={index}
+              name={item.projectName}
+              description={item.description}
+              links={item.links}
+            />
           ))}
         </ul>
       </div>
