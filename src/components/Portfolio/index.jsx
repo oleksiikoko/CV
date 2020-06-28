@@ -11,8 +11,8 @@ const Portfolio = ({ mobile, show = true }) => {
 
   const portfolioContainerClassNames = classNames("box", {
     "portfolio-container": !mobile,
-    "portfolio-container--animation": !show,
-    "portfolio-container--reverse-animation": show,
+    "portfolio-container--animation": !show && !mobile,
+    "portfolio-container--reverse-animation": show && !mobile,
     "portfolio-container--mobile": mobile,
   });
   const titleClassName = classNames("title", {

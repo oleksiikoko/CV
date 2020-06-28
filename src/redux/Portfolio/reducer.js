@@ -116,7 +116,6 @@ const initialState = {
 };
 
 export const portfolioReducer = (state = initialState, action) => {
-  console.log("fladskjf;adsljk");
   switch (action.type) {
     default:
       return state;

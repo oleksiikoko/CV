@@ -23,6 +23,7 @@ const BottomPageSwitcher = ({
       {states.map((item, index) => {
         return (
           <div
+            key={index}
             className={classNames({
               "bottom-page-switcher--active": index === curTabState,
             })}

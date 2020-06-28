@@ -6,30 +6,30 @@ import { PortfolioButton } from "components";
 import gifPreview from "assets/img/PortfolioGifPreview/GitHubSearchPreview.gif";
 import "./PortfolioItem.scss";
 
-const portfolioItemStyleWhilePreview = (width) => {
-  return {
-    // color: "",
-    height: `${width}px`,
-  };
-};
+// const portfolioItemStyleWhilePreview = (width) => {
+//   return {
+//     // color: "",
+//     height: `${width}px`,
+//   };
+// };
 
-const findNotNullWidthElementBy = (nameOfClass) => {
-  return Array.from(document.getElementsByClassName(nameOfClass))
-    .find((htmlElement) => htmlElement.getBoundingClientRect().width !== 0)
-    .getBoundingClientRect();
-};
+// const findNotNullWidthElementBy = (nameOfClass) => {
+//   return Array.from(document.getElementsByClassName(nameOfClass))
+//     .find((htmlElement) => htmlElement.getBoundingClientRect().width !== 0)
+//     .getBoundingClientRect();
+// };
 
-const getImgHeight = (img) => {
-  let newImg = new Image();
-  newImg.src = img;
-  return newImg.height;
-};
+// const getImgHeight = (img) => {
+//   let newImg = new Image();
+//   newImg.src = img;
+//   return newImg.height;
+// };
 
-const getImgWidth = (img) => {
-  let newImg = new Image();
-  newImg.src = img;
-  return newImg.width;
-};
+// const getImgWidth = (img) => {
+//   let newImg = new Image();
+//   newImg.src = img;
+//   return newImg.width;
+// };
 
 // const fitHeightBy
 
@@ -38,13 +38,13 @@ const PortfolioItem = ({ name, description, links }) => {
   // const
 
   useEffect(() => {
-    const portfolioItemWidth = findNotNullWidthElementBy("portfolio").width;
-    const previewGifHeight = getImgHeight(gifPreview);
-    const previewGifWidth = getImgWidth(gifPreview);
-    console.log(previewGifHeight);
-    const setPortfolioItemHeight =
-      previewGifHeight * (previewGifWidth / portfolioItemWidth);
-    console.log(setPortfolioItemHeight);
+    // const portfolioItemWidth = findNotNullWidthElementBy("portfolio").width;
+    // const previewGifHeight = getImgHeight(gifPreview);
+    // const previewGifWidth = getImgWidth(gifPreview);
+    // console.log(previewGifHeight);
+    // const setPortfolioItemHeight =
+    //   previewGifHeight * (previewGifWidth / portfolioItemWidth);
+    // console.log(setPortfolioItemHeight);
   }, []);
 
   return (
@@ -55,7 +55,7 @@ const PortfolioItem = ({ name, description, links }) => {
         onClick={() => setShowPreview(!showPreview)}
       >
         Preview
-      </div>{" "}
+      </div>
       <img
         className={className("portfolio__gif-preview", {
           "portfolio__gif-preview--show": showPreview,
