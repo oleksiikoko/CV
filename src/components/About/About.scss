@@ -1,0 +1,46 @@
+@keyframes left-down-slide {
+  0% {
+    right: 0;
+    top: 0;
+  }
+  100% {
+    right: 120%;
+    top: 25%;
+  }
+}
+
+@keyframes right-up-slide {
+  0% {
+    right: 120%;
+    top: 25%;
+  }
+  100% {
+    right: 0;
+    top: 0;
+  }
+}
+
+.about-container {
+  //   height: 54%;
+  width: 100%;
+  background-color: #fff;
+
+  &__text {
+    padding: 0 20px 30px 20px;
+    text-align: left;
+  }
+
+  &--animation {
+    animation: left-down-slide 1.5s;
+    right: 120%;
+    top: 25%;
+    position: relative;
+    z-index: 0;
+  }
+
+  &--reverse-animation {
+    animation: right-up-slide 1.5s;
+    position: relative;
+    z-index: 0;
+  }
+}

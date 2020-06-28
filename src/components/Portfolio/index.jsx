@@ -6,12 +6,13 @@ import { PortfolioItem } from "components";
 
 import "./Portfolio.scss";
 
-const Portfolio = ({ mobile }) => {
+const Portfolio = ({ mobile, show = true }) => {
   const porfolioItems = useSelector((state) => state.portfolio.items);
 
   const portfolioContainerClassNames = classNames("box", {
     "portfolio-container": !mobile,
-    "portfolio-container--animation": !mobile,
+    "portfolio-container--animation": !show,
+    "portfolio-container--reverse-animation": show,
     "portfolio-container--mobile": mobile,
   });
   const titleClassName = classNames("title", {

@@ -1,0 +1,41 @@
+@keyframes top-slide {
+  0% {
+    right: 0;
+    bottom: 0;
+  }
+  100% {
+    right: 0;
+    bottom: 37%;
+  }
+}
+
+@keyframes bottom-slide {
+  0% {
+    right: 0;
+    bottom: 37%;
+  }
+  100% {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.contacts-container {
+  height: 37%;
+  width: 100%;
+  background-color: #fff;
+
+  &--animation {
+    animation: top-slide 1.5s;
+    // right: 120%;
+    bottom: 37%;
+    position: relative;
+    z-index: 0;
+  }
+
+  &--reverse-animation {
+    animation: bottom-slide 1.5s;
+    position: relative;
+    z-index: 0;
+  }
+}

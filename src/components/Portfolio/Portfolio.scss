@@ -4,7 +4,15 @@
   }
   100% {
     left: 35%;
-    top: 0;
+  }
+}
+
+@keyframes left-slide {
+  0% {
+    left: 35%;
+  }
+  100% {
+    left: 0;
   }
 }
 
@@ -23,12 +31,18 @@
       display: none;
     }
 
-    // &--animation {
-    //   animation: right-slide 3s;
-    //   left: 35%;
-    //   position: relative;
-    //   z-index: 0;
-    // }
+    &--animation {
+      animation: right-slide 1.5s;
+      left: 35%;
+      position: relative;
+      z-index: 0;
+    }
+
+    &--reverse-animation {
+      animation: left-slide 1.5s;
+      position: relative;
+      z-index: 0;
+    }
   }
   ul,
   li {

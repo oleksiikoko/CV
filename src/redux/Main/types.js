@@ -1,0 +1,2 @@
+export const SET_MOTIVATION_PAGE = "MAIN:SET_MOTIVATION_PAGE";
+export const SET_CV_PAGE = "MAIN:SET_CV_PAGE";

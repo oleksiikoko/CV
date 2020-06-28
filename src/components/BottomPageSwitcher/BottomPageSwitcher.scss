@@ -1,0 +1,19 @@
+.bottom-page-switcher {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  > div {
+    text-align: center;
+    display: inline-block;
+    color: #1a1a1a;
+    border-top: 2px #1a1a1a solid;
+    padding: 12px 0 15px 0;
+    font-weight: 600;
+  }
+
+  &--active {
+    color: #1483b8 !important;
+    border-color: #1483b8 !important;
+  }
+}

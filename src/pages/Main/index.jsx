@@ -2,7 +2,9 @@ import React from "react";
 
 import ApiSvg from "assets/img/Api.svg";
 import "./Main.scss";
-import Portfolio from "components/Portfolio";
+import Portfolio from "containers/Portfolio";
+import CvBottomPageSwitcher from "../../containers/CvBottomPageSwitcher";
+import InfoBar from "../../containers/InfoBar";
 
 const Main = () => {
   return (
@@ -18,6 +20,17 @@ const Main = () => {
             <Portfolio mobile={true} />
             <div className="cv-skills">
               <p className="title p20">Skills:</p>
+              <p className="info-box__text">
+                - Understanding JavaScript strengths and weaknesses, es5 and es6
+                Standards - Manipulating a DOM model - Markup of adaptive,
+                flexbox HTML pages using SCSS preprocessor following the BEM
+                methodology - SPA application development using the React and
+                React-router framework, implementation of the Redux state
+                management tool - Creating RestApi with Node.js, using Express
+                and mongoose to work with MongoDB - Writing clean, reusable,
+                mutable code using OOP/OOD principles - Networking protocols:
+                TCP/IP, HTTP - Linux - Git
+              </p>
             </div>
             <div className="df">
               <div className="cv-experience">
@@ -32,22 +45,9 @@ const Main = () => {
               <p> Pre-Intermediate(read, write, and support documentation.)</p>
             </div>
           </div>
-          <div className="cv-switch ">
-            <div className="cv-switch--active">CV</div>
-            <div>Motivation</div>
-          </div>
+          <CvBottomPageSwitcher />
         </div>
-        <div className="contacts-about">
-          <div className="about-container about-container--animation box"></div>
-          <div className="contacts-container contacts-container--animation box"></div>
-          <div className="api-container flex-raw-container jc-sb">
-            <div className="api box flex-raw-container jc-center ai-center">
-              <img src={ApiSvg} alt="Api" />
-              <p>CV API</p>
-            </div>
-            <div className="pdf box"></div>
-          </div>
-        </div>
+        <InfoBar />
       </div>
     </div>
   );
