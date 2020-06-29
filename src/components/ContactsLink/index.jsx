@@ -7,22 +7,23 @@ import "./ContactLinks.scss";
 import getIcon from "utils/getIcon";
 
 const ContactLinks = ({ mobile, show = true }) => {
-  const contactsContainerClassNames = classNames("box", "contacts-container", {
-    "contacts-container--animation": !show,
-    "contacts-container--reverse-animation": show,
+  const contactsContainerClassNames = classNames("contacts-container", {
+    box: !mobile,
+    "contacts-container--animation": !show && !mobile,
+    "contacts-container--reverse-animation": show && !mobile,
   });
-  const titleClassName = classNames("title", {
+  const titleClassName = classNames("title", "p20", {
     "title--center": !mobile,
-    p20: !mobile,
+    // p20: !mobile,
   });
 
   const contacts = [
     { iconId: "phone", contact: "+380966138713" },
-    { iconId: "telegram", contact: "+380966138713" },
-    { iconId: "mail", contact: "+380966138713" },
-    { iconId: "gitHub", contact: "+380966138713" },
-    { iconId: "linkedin", contact: "+380966138713" },
-    { iconId: "skype", contact: "+380966138713" },
+    { iconId: "telegram", contact: "@oleksii_ko" },
+    { iconId: "mail", contact: "oleksiij.ko@gmail.com" },
+    { iconId: "gitHub", contact: "github.com/oleksiikoko" },
+    { iconId: "linkedin", contact: "linkedin.com/in/oleksiiko" },
+    { iconId: "skype", contact: "live:oleksiij.ko" },
   ];
 
   return (
@@ -32,7 +33,7 @@ const ContactLinks = ({ mobile, show = true }) => {
       {contacts.map((item, index) => {
         const Icon = getIcon(item.iconId);
         return (
-          <div key={index} className="contact-item">
+          <div key={index} className="contact-item df">
             <Icon />
             <p>{item.contact}</p>
           </div>

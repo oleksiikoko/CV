@@ -4,13 +4,14 @@ import classNames from "classnames";
 import "./About.scss";
 
 const About = ({ mobile, show = true }) => {
-  const aboutContainerClassNames = classNames("box", "about-container", {
-    "about-container--animation": !show,
-    "about-container--reverse-animation": show,
+  const aboutContainerClassNames = classNames("about-container", {
+    box: !mobile,
+    "about-container--animation": !show && !mobile,
+    "about-container--reverse-animation": show && !mobile,
   });
-  const titleClassName = classNames("title", {
+  const titleClassName = classNames("title", "p20", {
     "title--center": !mobile,
-    p20: !mobile,
+    // p20: mobile,
   });
 
   return (

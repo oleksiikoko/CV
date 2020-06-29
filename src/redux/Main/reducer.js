@@ -1,7 +1,14 @@
-import { SET_MOTIVATION_PAGE, SET_CV_PAGE } from "./types";
+import {
+  SET_MOTIVATION_PAGE,
+  SET_CV_PAGE,
+  SET_DESKTOP_VERSION,
+  SET_TABLET_VERSION,
+  SET_MOBILE_VERSION,
+} from "./types";
 
 const initialState = {
   page: 0,
+  screenVersion: { desktop: false, tablet: false, mobile: false },
 };
 
 export const mainReducer = (state = initialState, action) => {
@@ -10,6 +17,12 @@ export const mainReducer = (state = initialState, action) => {
       return { ...state, page: action.payload };
     case SET_CV_PAGE:
       return { ...state, page: action.payload };
+    case SET_DESKTOP_VERSION:
+      return { ...state, screenVersion: action.payload };
+    case SET_TABLET_VERSION:
+      return { ...state, screenVersion: action.payload };
+    case SET_MOBILE_VERSION:
+      return { ...state, screenVersion: action.payload };
     default:
       return state;
   }
