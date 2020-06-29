@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import { Main } from "pages";
@@ -26,12 +26,10 @@ function App({ setDesktopVersion, setTabletVersion, setMobileVersion }) {
   };
   const throttleResize = throttle(setScreenVersion, 1000);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      throttleResize();
-    });
-    setScreenVersion();
-  }, []);
+  // useEffect(() => {
+  setScreenVersion();
+  window.addEventListener("resize", throttleResize);
+  // }, []);
 
   return (
     <div className="App">

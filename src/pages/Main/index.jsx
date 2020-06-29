@@ -1,9 +1,7 @@
 import React from "react";
 
-import ApiSvg from "assets/img/Api.svg";
 import "./Main.scss";
 import Portfolio from "containers/Portfolio";
-import CvBottomPageSwitcher from "../../containers/CvBottomPageSwitcher";
 import InfoBar from "../../containers/InfoBar";
 import CvContainer from "../../containers/CvContainer";
 import { connect } from "react-redux";
@@ -12,12 +10,16 @@ const Main = ({ screenVersion }) => {
   return (
     <div className="container">
       <div className="flex-raw-container jc-sa ai-center">
-        <Portfolio mobile={false} />
+        {screenVersion.desktop && <Portfolio mobile={false} />}
         <CvContainer />
-        <InfoBar />
+        {!screenVersion.mobile && <InfoBar />}
       </div>
     </div>
   );
 };
 
-export default Main;
+const mapStateToProps = (state) => ({
+  screenVersion: state.main.screenVersion,
+});
+
+export default connect(mapStateToProps, null)(Main);

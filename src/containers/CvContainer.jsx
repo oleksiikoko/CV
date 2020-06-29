@@ -5,8 +5,9 @@ import About from "components/About";
 import CvBottomPageSwitcher from "./CvBottomPageSwitcher";
 import Portfolio from "../components/Portfolio";
 import ContactLinks from "../components/ContactsLink";
+import { connect } from "react-redux";
 
-const CvContainer = ({ curPage = 0 }) => {
+const CvContainer = ({ curPage = 0, screenVersion }) => {
   return (
     <div className="cv-container box">
       <div className="cv-header">
@@ -14,7 +15,7 @@ const CvContainer = ({ curPage = 0 }) => {
         <p className="cv-header__position">Frontend Developer</p>
       </div>
       <div className="cv-content">
-        <About mobile={true} show={curPage === 0} />
+        {screenVersion.mobile && <About mobile={true} show={curPage === 0} />}
         <div className="cv-skills">
           <p className="title p20">Skills:</p>
           <p className="info-box__text">
@@ -30,8 +31,9 @@ const CvContainer = ({ curPage = 0 }) => {
         </div>
         <Portfolio mobile={true} />
         <div
-          className={classNames()
-          // { df: !mobile }
+          className={
+            classNames()
+            // { df: !mobile }
           }
         >
           <div className="cv-experience">
@@ -58,11 +60,14 @@ const CvContainer = ({ curPage = 0 }) => {
           <p className="title">English - </p>
           <p> Pre-Intermediate(read, write, and support documentation.)</p>
         </div>
-        <ContactLinks mobile={true} />
+        {screenVersion.mobile && <ContactLinks mobile={true} />}
       </div>
       <CvBottomPageSwitcher />
     </div>
   );
 };
+const mapStateToProps = (state) => ({
+  screenVersion: state.main.screenVersion,
+});
 
-export default CvContainer;
+export default connect(mapStateToProps, null)(CvContainer);

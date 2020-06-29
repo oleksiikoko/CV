@@ -1,8 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 
-import { PhoneSvg } from "assets/img/phone.svg";
-
 import "./ContactLinks.scss";
 import getIcon from "utils/getIcon";
 
