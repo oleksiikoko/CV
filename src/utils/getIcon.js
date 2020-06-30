@@ -8,6 +8,7 @@ import { ReactComponent as TelegramSvg } from "assets/img/telegram.svg";
 import { ReactComponent as MailSvg } from "assets/img/mail.svg";
 import { ReactComponent as LinkedinSvg } from "assets/img/linkedin.svg";
 import { ReactComponent as SkypeSvg } from "assets/img/skype.svg";
+import { ReactComponent as DownArrowSvg } from "assets/img/downarrow.svg";
 
 const getIcon = (iconId) => {
   switch (iconId) {
@@ -27,6 +28,8 @@ const getIcon = (iconId) => {
       return LinkedinSvg;
     case "skype":
       return SkypeSvg;
+    case "downArrow":
+      return DownArrowSvg;
     default:
       return; //TODO: add default icon
   }

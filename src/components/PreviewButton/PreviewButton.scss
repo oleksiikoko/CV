@@ -1,0 +1,65 @@
+.preview-button {
+  cursor: pointer;
+
+  p {
+    transition: color 0.4s ease;
+
+    color: #3e3a3a;
+    font-size: 16px;
+  }
+
+  svg {
+    position: relative;
+
+    height: 21px;
+    margin-top: 1px;
+    margin-left: 7px;
+
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+
+    path {
+      fill: #3e3a3a;
+
+      transition: fill 0.4s ease;
+    }
+  }
+
+  &:hover {
+    p {
+      color: #000000;
+    }
+
+    svg {
+      path {
+        fill: #000000;
+      }
+    }
+  }
+
+  &--active {
+    p {
+      color: #1483b8;
+    }
+
+    svg {
+      transform: rotateX(180deg);
+
+      path {
+        fill: #1483b8;
+      }
+    }
+
+    &:hover {
+      p {
+        color: #166185;
+      }
+
+      svg {
+        path {
+          fill: #166185;
+        }
+      }
+    }
+  }
+}

@@ -5,65 +5,64 @@ import { PortfolioButton } from "components";
 
 import gifPreview from "assets/img/PortfolioGifPreview/GitHubSearchPreview.gif";
 import "./PortfolioItem.scss";
+import PreviewButton from "../PreviewButton";
 
-// const portfolioItemStyleWhilePreview = (width) => {
-//   return {
-//     // color: "",
-//     height: `${width}px`,
-//   };
-// };
+const getFirstElementByClassName = (nameOfClass) => {
+  return document
+    .getElementsByClassName(nameOfClass)[0]
+    .getBoundingClientRect();
+};
 
-// const findNotNullWidthElementBy = (nameOfClass) => {
-//   return Array.from(document.getElementsByClassName(nameOfClass))
-//     .find((htmlElement) => htmlElement.getBoundingClientRect().width !== 0)
-//     .getBoundingClientRect();
-// };
+const getImgHeight = (img) => {
+  let newImg = new Image();
+  newImg.src = img;
+  return newImg.height;
+};
 
-// const getImgHeight = (img) => {
-//   let newImg = new Image();
-//   newImg.src = img;
-//   return newImg.height;
-// };
-
-// const getImgWidth = (img) => {
-//   let newImg = new Image();
-//   newImg.src = img;
-//   return newImg.width;
-// };
-
-// const fitHeightBy
+const getImgWidth = (img) => {
+  let newImg = new Image();
+  newImg.src = img;
+  return newImg.width;
+};
 
 const PortfolioItem = ({ name, description, links }) => {
   const [showPreview, setShowPreview] = useState(false);
-  // const
+  const [previewGifHeight, setPreviewGifHeight] = useState(null);
 
   useEffect(() => {
-    // const portfolioItemWidth = findNotNullWidthElementBy("portfolio").width;
-    // const previewGifHeight = getImgHeight(gifPreview);
-    // const previewGifWidth = getImgWidth(gifPreview);
-    // console.log(previewGifHeight);
-    // const setPortfolioItemHeight =
-    //   previewGifHeight * (previewGifWidth / portfolioItemWidth);
-    // console.log(setPortfolioItemHeight);
+    const portfolioItemWidth = getFirstElementByClassName("portfolio").width;
+
+    const previewGifWidth = getImgWidth(gifPreview);
+    setPreviewGifHeight(
+      getImgHeight(gifPreview) * (portfolioItemWidth / previewGifWidth)
+    );
   }, []);
+
+  const previewStyle =
+    showPreview && previewGifHeight
+      ? { height: previewGifHeight.toString() + "px" }
+      : {};
 
   return (
     <li className="portfolio__item">
       <p className="portfolio__name">{name}</p>
-      <div
-        className="portfolio__preview--button"
+      <PreviewButton
+        className="portfolio__preview-button"
         onClick={() => setShowPreview(!showPreview)}
-      >
-        Preview
-      </div>
+        active={showPreview}
+      />
       <img
         className={className("portfolio__gif-preview", {
           "portfolio__gif-preview--show": showPreview,
         })}
         src={gifPreview}
+        style={previewStyle}
         alt="loading..."
       />
-      <p className="portfolio__description">{description}</p>
+      <p
+        className="portfolio__description"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
       <div className="button-container df">
         {links.map((item, index) => {
           return (

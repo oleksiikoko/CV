@@ -1,14 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import classNames from "classnames";
 
 import { PortfolioItem } from "components";
 
 import "./Portfolio.scss";
 
-const Portfolio = ({ mobile, show = true }) => {
-  const porfolioItems = useSelector((state) => state.portfolio.items);
-
+const Portfolio = ({ porfolioItems, loading, mobile, show }) => {
   const portfolioContainerClassNames = classNames("box", {
     "portfolio-container": !mobile,
     "portfolio-container--animation": !show && !mobile,
@@ -24,16 +21,20 @@ const Portfolio = ({ mobile, show = true }) => {
     <div className={portfolioContainerClassNames}>
       <p className={titleClassName}>Portfolio{mobile ? ":" : ""}</p>
       <div className="portfolio">
-        <ul>
-          {porfolioItems.map((item, index) => (
-            <PortfolioItem
-              key={index}
-              name={item.projectName}
-              description={item.description}
-              links={item.links}
-            />
-          ))}
-        </ul>
+        {loading && porfolioItems.length !== 0 ? (
+          <p>Loading</p>
+        ) : (
+          <ul>
+            {porfolioItems.map((item, index) => (
+              <PortfolioItem
+                key={index}
+                name={item.projectName}
+                description={item.description}
+                links={item.links}
+              />
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

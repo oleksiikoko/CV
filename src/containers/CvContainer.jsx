@@ -29,7 +29,7 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
             principles - Networking protocols: TCP/IP, HTTP - Linux - Git
           </p>
         </div>
-        <Portfolio mobile={true} />
+        {!screenVersion.desktop && <Portfolio mobile={true} />}
         <div
           className={
             classNames()

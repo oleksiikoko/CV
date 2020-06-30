@@ -9,9 +9,15 @@ import {
   setTabletVersion,
   setMobileVersion,
 } from "redux/Main/actions";
+import { fetchPortfolio } from "redux/Portfolio/actions";
 import throttle from "./utils/throttle";
 
-function App({ setDesktopVersion, setTabletVersion, setMobileVersion }) {
+function App({
+  setDesktopVersion,
+  setTabletVersion,
+  setMobileVersion,
+  fetchPortfolio,
+}) {
   const setScreenVersion = () => {
     const width = window.innerWidth;
     const screenVersion = store.getState().main.screenVersion;
@@ -26,9 +32,11 @@ function App({ setDesktopVersion, setTabletVersion, setMobileVersion }) {
   };
   const throttleResize = throttle(setScreenVersion, 1000);
 
-  // useEffect(() => {
   setScreenVersion();
   window.addEventListener("resize", throttleResize);
+
+  // useEffect(() => {
+  fetchPortfolio();
   // }, []);
 
   return (
@@ -42,6 +50,7 @@ const mapDispatchToProps = {
   setDesktopVersion,
   setTabletVersion,
   setMobileVersion,
+  fetchPortfolio,
 };
 
 export default connect(null, mapDispatchToProps)(App);

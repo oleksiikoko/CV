@@ -1,26 +1,23 @@
 .portfolio {
   &__item {
-    // height: 500px;
+    position: relative;
+
     transition: height 0.6s ease-out;
   }
+
+  &__preview-button {
+    position: absolute;
+    top: 23px;
+    right: 20px;
+  }
+
   &__gif-preview {
-    // position: absolute;
-    // z-index: 2;
-    display: none;
-    // height: 0;
-    transition: height 0.6s ease-out;
+    height: 0;
+
+    transition: height 0.4s ease-out;
 
     &--show {
-      //   border-radius: 30px;
-      //   height: auto;
-      display: block;
-      transition: height 0.6s ease-out;
-      //   height: auto;
-
-      .portfolio {
-        &__item {
-        }
-      }
+      transition: height 0.4s ease-out;
     }
   }
 }
