@@ -5,7 +5,7 @@ import { PortfolioItem } from "components";
 
 import "./Portfolio.scss";
 
-const Portfolio = ({ porfolioItems, loading, mobile, show }) => {
+const Portfolio = ({ portfolioItems, loading, mobile, show }) => {
   const portfolioContainerClassNames = classNames("box", {
     "portfolio-container": !mobile,
     "portfolio-container--animation": !show && !mobile,
@@ -21,11 +21,11 @@ const Portfolio = ({ porfolioItems, loading, mobile, show }) => {
     <div className={portfolioContainerClassNames}>
       <p className={titleClassName}>Portfolio{mobile ? ":" : ""}</p>
       <div className="portfolio">
-        {loading && porfolioItems.length !== 0 ? (
+        {loading && portfolioItems.length === 0 ? (
           <p>Loading</p>
         ) : (
           <ul>
-            {porfolioItems.map((item, index) => (
+            {portfolioItems.map((item, index) => (
               <PortfolioItem
                 key={index}
                 name={item.projectName}
