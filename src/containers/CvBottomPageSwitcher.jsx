@@ -1,9 +1,8 @@
 import React from "react";
-
-import BottomPageSwitcher from "../components/BottomPageSwitcher";
 import { connect } from "react-redux";
 
-import { setCvPage, setMotivationPage } from "./../redux/Main/actions";
+import { setCvPage, setMotivationPage } from "redux/Main/actions";
+import { BottomPageSwitcher } from "components";
 
 const CvBottomPageSwitcher = ({ curPage, setCvPage, setMotivationPage }) => {
   const onTabChange = (index) => {

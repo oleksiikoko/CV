@@ -1,29 +1,11 @@
 import React, { useState, useEffect } from "react";
 import className from "classnames";
 
-import { PortfolioButton } from "components";
+import { getFirstElementByClassName, getImgHeight, getImgWidth } from "utils";
+import { PortfolioButton, PreviewButton, Description } from "components";
 
-import gifPreview from "assets/img/PortfolioGifPreview/GitHubSearchPreview.gif";
 import "./PortfolioItem.scss";
-import PreviewButton from "../PreviewButton";
-
-const getFirstElementByClassName = (nameOfClass) => {
-  return document
-    .getElementsByClassName(nameOfClass)[0]
-    .getBoundingClientRect();
-};
-
-const getImgHeight = (img) => {
-  let newImg = new Image();
-  newImg.src = img;
-  return newImg.height;
-};
-
-const getImgWidth = (img) => {
-  let newImg = new Image();
-  newImg.src = img;
-  return newImg.width;
-};
+import gifPreview from "assets/img/PortfolioGifPreview/GitHubSearchPreview.gif";
 
 const PortfolioItem = ({ name, description, links }) => {
   const [showPreview, setShowPreview] = useState(false);
@@ -57,12 +39,9 @@ const PortfolioItem = ({ name, description, links }) => {
         })}
         src={gifPreview}
         style={previewStyle}
-        alt="loading..."
+        alt={`${name} preview`}
       />
-      <p
-        className="portfolio__description"
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
+      <Description description={description} />
       <div className="button-container df">
         {links.map((item, index) => {
           return (

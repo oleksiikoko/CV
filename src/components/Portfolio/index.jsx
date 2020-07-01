@@ -1,10 +1,9 @@
 import React from "react";
 import classNames from "classnames";
 
-import { PortfolioItem } from "components";
+import { PortfolioItems, Loader } from "components";
 
 import "./Portfolio.scss";
-
 const Portfolio = ({ portfolioItems, loading, mobile, show }) => {
   const portfolioContainerClassNames = classNames("box", {
     "portfolio-container": !mobile,
@@ -22,18 +21,9 @@ const Portfolio = ({ portfolioItems, loading, mobile, show }) => {
       <p className={titleClassName}>Portfolio{mobile ? ":" : ""}</p>
       <div className="portfolio">
         {loading && portfolioItems.length === 0 ? (
-          <p>Loading</p>
+          <Loader />
         ) : (
-          <ul>
-            {portfolioItems.map((item, index) => (
-              <PortfolioItem
-                key={index}
-                name={item.projectName}
-                description={item.description}
-                links={item.links}
-              />
-            ))}
-          </ul>
+          <PortfolioItems portfolioItems={portfolioItems} />
         )}
       </div>
     </div>

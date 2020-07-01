@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import PortfolioBase from "components/Portfolio";
+import { Portfolio as PortfolioBase } from "components";
 
 const Portfolio = ({ mobile, curPage, portfolioItems, loading }) => {
   return (

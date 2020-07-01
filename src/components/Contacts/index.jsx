@@ -1,10 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 
-import "./ContactLinks.scss";
-import getIcon from "utils/getIcon";
+import { getIcon } from "utils";
 
-const ContactLinks = ({ mobile, show = true }) => {
+import "./Contacts.scss";
+
+const Contacts = ({ mobile, show = true }) => {
   const contactsContainerClassNames = classNames("contacts-container", {
     box: !mobile,
     "contacts-container--animation": !show && !mobile,
@@ -41,4 +42,4 @@ const ContactLinks = ({ mobile, show = true }) => {
   );
 };
 
-export default ContactLinks;
+export default Contacts;

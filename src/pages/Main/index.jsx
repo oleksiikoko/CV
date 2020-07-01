@@ -1,10 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
+
+import { Portfolio, CvContainer, InfoBar } from "containers";
 
 import "./Main.scss";
-import Portfolio from "containers/Portfolio";
-import InfoBar from "../../containers/InfoBar";
-import CvContainer from "../../containers/CvContainer";
-import { connect } from "react-redux";
 
 const Main = ({ screenVersion }) => {
   return (

@@ -1,11 +1,31 @@
 import React from "react";
 import classNames from "classnames";
 
-import About from "components/About";
-import CvBottomPageSwitcher from "./CvBottomPageSwitcher";
-import Portfolio from "../components/Portfolio";
-import ContactLinks from "../components/ContactsLink";
 import { connect } from "react-redux";
+
+import { About, Contacts, Description } from "components";
+import { CvBottomPageSwitcher, Portfolio } from "containers";
+
+const skills = `<ul>
+<li>
+  Understanding JavaScript strengths and weaknesses, <b>es5</b> 
+  and <b>es6</b> Standards
+</li>
+<li>Manipulating a DOM model </li>
+<li>Markup of adaptive, flexbox HTML pages using SCSS preprocessor following the BEM methodology</li>
+<li>
+  SPA application development using the React and React-router
+  framework, implementation of the Redux state management tool
+</li>
+<li>
+  Creating RestApi with Node.js, using Express and mongoose to
+  work with MongoDB
+</li>
+<li>
+  Writing clean, reusable, mutable code using OOP/OOD principles
+</li>
+<li>Networking protocols: TCP/IP, HTTP - Linux - Git</li>
+</ul>`;
 
 const CvContainer = ({ curPage = 0, screenVersion }) => {
   return (
@@ -18,16 +38,7 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
         {screenVersion.mobile && <About mobile={true} show={curPage === 0} />}
         <div className="cv-skills">
           <p className="title p20">Skills:</p>
-          <p className="info-box__text">
-            - Understanding JavaScript strengths and weaknesses, es5 and es6
-            Standards - Manipulating a DOM model - Markup of adaptive, flexbox
-            HTML pages using SCSS preprocessor following the BEM methodology -
-            SPA application development using the React and React-router
-            framework, implementation of the Redux state management tool -
-            Creating RestApi with Node.js, using Express and mongoose to work
-            with MongoDB - Writing clean, reusable, mutable code using OOP/OOD
-            principles - Networking protocols: TCP/IP, HTTP - Linux - Git
-          </p>
+          <Description description={skills} />
         </div>
         {!screenVersion.desktop && <Portfolio mobile={true} />}
         <div
@@ -60,7 +71,7 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
           <p className="title">English - </p>
           <p> Pre-Intermediate(read, write, and support documentation.)</p>
         </div>
-        {screenVersion.mobile && <ContactLinks mobile={true} />}
+        {screenVersion.mobile && <Contacts mobile={true} />}
       </div>
       <CvBottomPageSwitcher />
     </div>
