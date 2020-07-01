@@ -1,7 +1,6 @@
 export { default as Portfolio } from "./Portfolio/index";
 export { default as PortfolioButton } from "./PortfolioButton";
 export { default as PortfolioItem } from "./PortfolioItem";
-export { default as PortfolioPreviewButton } from "./PortfolioPreviewButton";
 export { default as About } from "./About";
 export { default as BottomPageSwitcher } from "./BottomPageSwitcher";
 export { default as Contacts } from "./Contacts";
