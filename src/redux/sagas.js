@@ -24,5 +24,7 @@ function* sagaRequestPortfolio() {
 async function fetchPortfolio() {
   const response = await portfolioApi.getPortfolio();
 
+  console.log(response);
+
   return response.data;
 }
