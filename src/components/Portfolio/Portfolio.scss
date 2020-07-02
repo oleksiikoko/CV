@@ -19,7 +19,9 @@
 .portfolio {
   // position: relative;
   &-container {
+    scroll-behavior: smooth;
     // height: 80%;
+    transition: height 3s ease-out;
     padding: 30px 0 40px 0;
     width: 27%;
     max-height: 96%;

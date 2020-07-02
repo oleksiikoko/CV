@@ -5,11 +5,12 @@ import getIcon from "utils/getIcon";
 
 import "./PreviewButton.scss";
 
-const PreviewButton = ({ active, onClick, className }) => {
+const PreviewButton = ({ _id, active, onClick, className }) => {
   const Icon = getIcon("downArrow");
 
   return (
-    <div
+    <a
+      href={`#${_id}`}
       className={classNames(
         "df",
         "preview-button",
@@ -22,7 +23,7 @@ const PreviewButton = ({ active, onClick, className }) => {
     >
       <p className="preview-button__name">Preview</p>
       <Icon />
-    </div>
+    </a>
   );
 };
 

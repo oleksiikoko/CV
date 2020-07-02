@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import className from "classnames";
 
-import { getFirstElementByClassName, getImgHeight, getImgWidth } from "utils";
-import { PortfolioButton, PreviewButton, Description } from "components";
+import { getFirstElementByClassName } from "utils";
+import { PreviewButton, Description } from "components";
+import { PortfolioButtonsContainer } from "containers";
 
 import "./PortfolioItem.scss";
-import gifPreview from "assets/img/PortfolioGifPreview/GitHubSearchPreview.gif";
 
-const PortfolioItem = ({ name, description, links }) => {
+const PortfolioItem = ({ _id, name, description, links, gifPreview }) => {
   const [showPreview, setShowPreview] = useState(false);
   const [previewGifHeight, setPreviewGifHeight] = useState(null);
 
-  useEffect(() => {
-    const portfolioItemWidth = getFirstElementByClassName("portfolio").width;
+  if (gifPreview !== undefined && previewGifHeight === null) {
+    const gifPreviewImg = new Image();
+    gifPreviewImg.src = gifPreview;
 
-    const previewGifWidth = getImgWidth(gifPreview);
+    const portfolioItemWidth = getFirstElementByClassName("portfolio").width;
+    const previewGifWidth = gifPreviewImg.width;
+
     setPreviewGifHeight(
-      getImgHeight(gifPreview) * (portfolioItemWidth / previewGifWidth)
+      gifPreviewImg.height * (portfolioItemWidth / previewGifWidth)
     );
-  }, []);
+  }
 
   const previewStyle =
     showPreview && previewGifHeight
@@ -26,37 +29,32 @@ const PortfolioItem = ({ name, description, links }) => {
       : {};
 
   return (
-    <li className="portfolio__item">
-      <p className="portfolio__name">{name}</p>
-      <PreviewButton
-        className="portfolio__preview-button"
-        onClick={() => setShowPreview(!showPreview)}
-        active={showPreview}
-      />
-      <img
-        className={className("portfolio__gif-preview", {
-          "portfolio__gif-preview--show": showPreview,
-        })}
-        src={gifPreview}
-        style={previewStyle}
-        alt={`${name} preview`}
-      />
-      <Description description={description} />
-      <div className="button-container df">
-        {links.map((item, index) => {
-          return (
-            <PortfolioButton
-              url={item.url}
-              color={item.color}
-              iconId={item.iconId}
-              name={item.name}
-              countInLine={links.length}
-              key={index}
+    <>
+      <li className="portfolio__item">
+        <p className="portfolio__name">{name}</p>
+        {gifPreview !== undefined && (
+          <>
+            <PreviewButton
+              _id={_id}
+              className="portfolio__preview-button"
+              onClick={() => setShowPreview(!showPreview)}
+              active={showPreview}
             />
-          );
-        })}
-      </div>
-    </li>
+            <img
+              className={className("portfolio__gif-preview", {
+                "portfolio__gif-preview--show": showPreview,
+              })}
+              src={gifPreview}
+              style={previewStyle}
+              alt={`${name} preview`}
+            />
+          </>
+        )}
+        <Description description={description} />
+        <PortfolioButtonsContainer items={links} />
+      </li>
+      <div id={_id}></div>
+    </>
   );
 };
 
