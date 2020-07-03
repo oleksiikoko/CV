@@ -5,6 +5,7 @@
   }
   li {
     text-align: left;
+    list-style-type: disc;
   }
 
   p {
@@ -12,4 +13,8 @@
     text-align: justify;
     margin: 0 20px 7px 20px;
   }
+
+  // b {
+  //   font-weight: 600;
+  // }
 }

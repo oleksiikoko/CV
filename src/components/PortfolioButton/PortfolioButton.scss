@@ -10,16 +10,6 @@
 }
 
 .portfolio {
-  li {
-    border-radius: 0 0 30px 30px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
-    transition: box-shadow 0.2s ease;
-
-    &:hover {
-      box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.31);
-    }
-  }
-
   &__button {
     position: relative;
     overflow: hidden;

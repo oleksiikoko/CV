@@ -15,7 +15,7 @@ const stringToImgSource = (img) => {
 
 const PortfolioItems = ({ portfolioItems }) => {
   return (
-    <ul>
+    <ul className="portfolio__ul">
       {portfolioItems.map((item, index) => (
         <PortfolioItem
           key={index}
