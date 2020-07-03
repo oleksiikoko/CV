@@ -16,10 +16,9 @@ const BottomPageSwitcher = ({
       onTabChange(changeTo);
     }
   };
+
   return (
     <div className="bottom-page-switcher">
-      {/* <div className="cv-switch--active">CV</div> */}
-      {/* <div>Motivation</div> */}
       {states.map((item, index) => {
         return (
           <div

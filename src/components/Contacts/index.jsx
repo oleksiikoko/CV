@@ -4,16 +4,13 @@ import classNames from "classnames";
 import { getIcon } from "utils";
 
 import "./Contacts.scss";
+import BlockTitle from "./../BlockTitle/index";
 
 const Contacts = ({ mobile, show = true }) => {
   const contactsContainerClassNames = classNames("contacts-container", {
     box: !mobile,
     "contacts-container--animation": !show && !mobile,
     "contacts-container--reverse-animation": show && !mobile,
-  });
-  const titleClassName = classNames("title", "p20", {
-    "title--center": !mobile,
-    // p20: !mobile,
   });
 
   const contacts = [
@@ -27,7 +24,7 @@ const Contacts = ({ mobile, show = true }) => {
 
   return (
     <div className={contactsContainerClassNames}>
-      <p className={titleClassName}>Contacts/Links{mobile ? ":" : ""}</p>
+      <BlockTitle text="Contacts" inCvBlock={mobile} />
 
       {contacts.map((item, index) => {
         const Icon = getIcon(item.iconId);

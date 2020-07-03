@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import { connect } from "react-redux";
 
-import { About, Contacts, Description } from "components";
+import { About, Contacts, Description, BlockTitle } from "components";
 import { CvBottomPageSwitcher, Portfolio } from "containers";
 
 const skills = `<ul>
@@ -37,7 +37,7 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
       <div className="cv-content">
         {screenVersion.mobile && <About mobile={true} show={curPage === 0} />}
         <div className="cv-skills">
-          <p className="title p20">Skills:</p>
+          <BlockTitle inCvBlock text="Skills" />
           <Description description={skills} />
         </div>
         {!screenVersion.desktop && <Portfolio mobile={true} />}
@@ -48,7 +48,7 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
           }
         >
           <div className="cv-experience">
-            <p className="title p20">Experience:</p>
+            <BlockTitle inCvBlock text="Experience" />
             <p className="info-box__text">
               Startup “Extracoin” - C++/Qt developer https://etalonium.io/ Jan
               2019 - Dec 2019 - Decentralized application development -
@@ -57,19 +57,23 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
             </p>
           </div>
           <div className="cv-education">
-            <p className="title p20">Education:</p>
-            <p className="info-box__text">
-              Unit Factory pool Was engaged in an intensive boot camp of C
+            <BlockTitle inCvBlock text="Education" />
+            <Description
+              description={`
+              <p>Unit Factory pool Was engaged in an intensive boot camp of C
               language course where everyone learns himself to work with strict
               deadlines and self-planning. Basics of networking. Introduction to
               Unix National Technical University of Ukraine "Igor Sikorsky Kyiv
               Polytechnic Institute" - Bachelor Applied mathematics
-            </p>
+            </p>`}
+            />
           </div>
         </div>
         <div className="cv-english df ai-center p20">
-          <p className="title">English - </p>
-          <p> Pre-Intermediate(read, write, and support documentation.)</p>
+          <p className="title ">English -</p>
+          <Description
+            description={`<p> Pre-Intermediate(read, write, and support documentation.)</p>`}
+          />
         </div>
         {screenVersion.mobile && <Contacts mobile={true} />}
       </div>

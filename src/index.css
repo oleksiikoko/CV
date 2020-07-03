@@ -172,6 +172,14 @@ body {
   padding: 20px;
 }
 
+.pb5 {
+  padding-bottom: 5px;
+}
+
+.pb0 {
+  padding-bottom: 0;
+}
+
 .w50p {
   width: 50%;
 }
