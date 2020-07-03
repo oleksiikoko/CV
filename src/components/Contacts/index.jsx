@@ -6,7 +6,7 @@ import { getIcon } from "utils";
 import "./Contacts.scss";
 import BlockTitle from "./../BlockTitle/index";
 
-const Contacts = ({ mobile, show = true }) => {
+const Contacts = ({ mobile, show }) => {
   const contactsContainerClassNames = classNames("contacts-container", {
     box: !mobile,
     "contacts-container--animation": !show && !mobile,

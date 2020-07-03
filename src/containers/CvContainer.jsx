@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 
 import { connect } from "react-redux";
 
@@ -41,12 +40,7 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
           <Description description={skills} />
         </div>
         {!screenVersion.desktop && <Portfolio mobile={true} />}
-        <div
-          className={
-            classNames()
-            // { df: !mobile }
-          }
-        >
+        <div>
           <div className="cv-experience">
             <BlockTitle inCvBlock text="Experience" />
             <p className="info-box__text">
@@ -69,10 +63,10 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
             />
           </div>
         </div>
-        <div className="cv-english df ai-center p20">
-          <p className="title ">English -</p>
+        <div className="cv-english df ai-center ">
+          <BlockTitle inCvBlock text="English" dash />
           <Description
-            description={`<p> Pre-Intermediate(read, write, and support documentation.)</p>`}
+            description={`<p>Pre-Intermediate(read, write, and support documentation.)</p>`}
           />
         </div>
         {screenVersion.mobile && <Contacts mobile={true} />}

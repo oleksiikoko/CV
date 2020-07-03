@@ -1,17 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const BlockTitle = ({ inCvBlock, text }) => {
+const BlockTitle = ({ inCvBlock, text, dash }) => {
   const titleClassName = classNames("title", "p20", "pb5", {
     "title--center": !inCvBlock,
   });
 
   return (
-    <p className={titleClassName}>
+    <p className={titleClassName} data-testid="title">
       {text}
-      {inCvBlock ? ":" : ""}
+      {inCvBlock ? (dash ? " - " : ":") : ""}
     </p>
   );
+};
+
+BlockTitle.propTypes = {
+  inCvBlock: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  dash: PropTypes.bool,
 };
 
 export default BlockTitle;

@@ -98,6 +98,19 @@
       bottom: 20px;
     }
   }
+
+  &-english {
+    .title {
+      padding: 20px 0 20px 20px;
+    }
+    .description {
+      padding-top: 5px;
+      p {
+        text-indent: 5px;
+        margin: 0;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {

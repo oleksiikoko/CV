@@ -21,7 +21,6 @@ const Preview = ({ _id, gifPreview, name }) => {
         onPreviewEnded={() => setShowPreview(false)}
         name={name}
       />
-      {/* SelectBlocksOnGreyScreenById */}
     </>
   );
 };

@@ -32,16 +32,6 @@ const GifPreview = ({ gifPreview, showPreview, onPreviewEnded, name }) => {
       ? { height: previewGifHeight.toString() + "px" }
       : {};
 
-  //   useEffect(() => {
-  //     console.log(fullScreen);
-  //     if (fullScreen) {
-  //       const greyScreen = new GreyScreen();
-  //       greyScreen.show();
-  //       greyScreen.addItemsToShow([name]);
-  //       greyScreen.showItems();
-  //     }
-  //   }, [fullScreen]);
-
   return (
     <img
       className={classNames("portfolio__gif-preview", {

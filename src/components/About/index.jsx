@@ -1,11 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 
-import "./About.scss";
-import BlockTitle from "../BlockTitle";
-import Description from "../DescriptionBox";
+import { BlockTitle, Description } from "components";
 
-const About = ({ mobile, show = true }) => {
+import "./About.scss";
+
+const About = ({ mobile, show }) => {
   const aboutContainerClassNames = classNames("about-container", {
     box: !mobile,
     "about-container--animation": !show && !mobile,
