@@ -57,6 +57,7 @@
   }
 
   &-content {
+    scroll-behavior: smooth;
     // flex: 1 0 auto;
     // position: relative;
     overflow: scroll;

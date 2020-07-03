@@ -41,6 +41,7 @@ function App({
 
   return (
     <div className="App">
+      <div id="grey-screen"></div>
       <Main />
     </div>
   );

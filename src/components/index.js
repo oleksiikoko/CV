@@ -8,3 +8,5 @@ export { default as Description } from "./DescriptionBox";
 export { default as Loader } from "./Loader";
 export { default as PreviewButton } from "./PreviewButton";
 export { default as PortfolioItems } from "./PortfolioItems";
+export { default as Preview } from "./Preview";
+export { default as GifPreview } from "./GifPreview";
