@@ -7,7 +7,6 @@ import { getFirstElementByClassName } from "utils";
 const GifPreview = ({ gifPreview, showPreview, onPreviewEnded, name }) => {
   const [previewGifHeight, setPreviewGifHeight] = useState(null);
   const [previewDuration, setPreviewDuration] = useState(0);
-  const [fullScreen, setFullScreen] = useState(false);
 
   if (previewGifHeight === null) {
     let gifPreviewImg = new Image();
@@ -41,7 +40,6 @@ const GifPreview = ({ gifPreview, showPreview, onPreviewEnded, name }) => {
       src={gifPreview}
       style={previewStyle}
       alt={`${name} preview`}
-      onClick={() => setFullScreen(!fullScreen)}
     />
   );
 };
