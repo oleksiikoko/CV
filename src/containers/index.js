@@ -3,3 +3,4 @@ export { default as CvContainer } from "./CvContainer";
 export { default as InfoBar } from "./InfoBar";
 export { default as Portfolio } from "./Portfolio";
 export { default as PortfolioButtonsContainer } from "./PortfolioButtonsContainer";
+export { default as About } from "./About";

@@ -1,11 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 
-import { BlockTitle, Description } from "components";
+import { BlockTitle, Description, Loader } from "components";
 
 import "./About.scss";
 
-const About = ({ mobile, show }) => {
+const About = ({ mobile, show, text, loading = true }) => {
   const aboutContainerClassNames = classNames("about-container", {
     box: !mobile,
     "about-container--animation": !show && !mobile,
@@ -15,16 +15,7 @@ const About = ({ mobile, show }) => {
   return (
     <div className={aboutContainerClassNames}>
       <BlockTitle inCvBlock={mobile} text="About" />
-      <Description
-        description={`<p>
-        Mostly, I'm looking for a company that appreciates and strongly
-        concentrate freethinkers in addition to courageous people, as well as
-        the promotion of diverse development of workers specifically on the
-        position of "Front-end developer" I want to be engaged in the vast
-        majority of the development of "logic" on Js/React, markup(HTML, CSS)
-        does not frighten me, assuming that it will occupy no more than 40% of
-        tasks related.</p>`}
-      />
+      {loading ? <Loader /> : <Description description={text} />}
     </div>
   );
 };

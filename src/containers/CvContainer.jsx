@@ -2,8 +2,8 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-import { About, Contacts, Description, BlockTitle } from "components";
-import { CvBottomPageSwitcher, Portfolio } from "containers";
+import { Contacts, Description, BlockTitle } from "components";
+import { CvBottomPageSwitcher, Portfolio, About } from "containers";
 
 const skills = `<ul>
 <li>
