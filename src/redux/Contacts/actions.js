@@ -1,19 +1,23 @@
-import { REQUEST_ABOUT, SHOW_ABOUT_LOADER, HIDE_ABOUT_LOADER } from "./types";
+import {
+  REQUEST_CONTACTS,
+  SHOW_CONTACTS_LOADER,
+  HIDE_CONTACTS_LOADER,
+} from "./types";
 
 export function showContactsLoader() {
   return {
-    type: SHOW_ABOUT_LOADER,
+    type: SHOW_CONTACTS_LOADER,
   };
 }
 
 export function hideContactsLoader() {
   return {
-    type: HIDE_ABOUT_LOADER,
+    type: HIDE_CONTACTS_LOADER,
   };
 }
 
 export const fetchContacts = () => {
   return {
-    type: REQUEST_ABOUT,
+    type: REQUEST_CONTACTS,
   };
 };
