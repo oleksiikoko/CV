@@ -1,9 +1,10 @@
 import React from "react";
-
 import { connect } from "react-redux";
 
 import { Contacts, Description, BlockTitle } from "components";
 import { CvBottomPageSwitcher, Portfolio, About } from "containers";
+
+import { fetchAbout } from "redux/About/actions";
 
 const skills = `<ul>
 <li>
@@ -26,7 +27,8 @@ const skills = `<ul>
 <li>Networking protocols: TCP/IP, HTTP - Linux - Git</li>
 </ul>`;
 
-const CvContainer = ({ curPage = 0, screenVersion }) => {
+const CvContainer = ({ curPage = 0, screenVersion, fetchAbout }) => {
+  fetchAbout();
   return (
     <div className="cv-container box">
       <div className="cv-header">
@@ -34,12 +36,12 @@ const CvContainer = ({ curPage = 0, screenVersion }) => {
         <p className="cv-header__position">Frontend Developer</p>
       </div>
       <div className="cv-content">
-        {screenVersion.mobile && <About mobile={true} show={curPage === 0} />}
+        {screenVersion.mobile && <About />}
         <div className="cv-skills">
           <BlockTitle inCvBlock text="Skills" />
           <Description description={skills} />
         </div>
-        {!screenVersion.desktop && <Portfolio mobile={true} />}
+        {!screenVersion.desktop && <Portfolio mobile={screenVersion.mobile} />}
         <div>
           <div className="cv-experience">
             <BlockTitle inCvBlock text="Experience" />
@@ -79,4 +81,8 @@ const mapStateToProps = (state) => ({
   screenVersion: state.main.screenVersion,
 });
 
-export default connect(mapStateToProps, null)(CvContainer);
+const mapDispatchToProps = {
+  fetchAbout,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CvContainer);

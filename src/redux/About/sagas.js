@@ -18,5 +18,5 @@ export function* sagaRequestAbout() {
 
 export async function fetchAbout() {
   const response = await aboutApi.getAbout();
-  return response.data;
+  return response.data[0].text;
 }

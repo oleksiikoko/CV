@@ -1,5 +1,5 @@
 import axios from "core/axiosCvApi";
 
 export default {
-  getAbout: () => axios.get("/portfolio"),
+  getAbout: () => axios.get("/about"),
 };

@@ -2,7 +2,7 @@ import { SHOW_ABOUT_LOADER, HIDE_ABOUT_LOADER, FETCH_ABOUT } from "./types";
 
 const initialState = {
   loading: false,
-  text: null,
+  text: "",
 };
 
 export const aboutReducer = (state = initialState, action) => {

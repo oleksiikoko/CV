@@ -6,7 +6,6 @@ import BlockTitle from "./index";
 describe("BlockTitle test", () => {
   it(`<BlockTitle text="test" />`, () => {
     const { queryByTestId, getByText } = render(<BlockTitle text="test" />);
-
     expect(queryByTestId("title")).toHaveAttribute(
       "class",
       "title p20 pb5 title--center"
@@ -18,7 +17,6 @@ describe("BlockTitle test", () => {
     const { queryByTestId, getByText } = render(
       <BlockTitle text="test" inCvBlock />
     );
-
     expect(queryByTestId("title")).toHaveAttribute("class", "title p20 pb5");
     expect(getByText("test:")).toBeTruthy();
   });
@@ -27,7 +25,6 @@ describe("BlockTitle test", () => {
     const { queryByTestId, getByText } = render(
       <BlockTitle text="test" inCvBlock dash />
     );
-
     expect(queryByTestId("title")).toHaveAttribute("class", "title p20 pb5");
     expect(getByText("test -")).toBeTruthy();
   });
