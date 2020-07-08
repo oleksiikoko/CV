@@ -11,3 +11,5 @@ export { default as PortfolioItems } from "./PortfolioItems";
 export { default as Preview } from "./Preview";
 export { default as GifPreview } from "./GifPreview";
 export { default as BlockTitle } from "./BlockTitle";
+export { default as Tools } from "./Tools";
+export { default as ToolItem } from "./ToolItem";

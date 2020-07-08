@@ -27,7 +27,7 @@ const skills = `<ul>
 <li>Networking protocols: TCP/IP, HTTP - Linux - Git</li>
 </ul>`;
 
-const CvContainer = ({ curPage = 0, screenVersion, fetchAbout }) => {
+const CvContainer = ({ curPage, screenVersion, fetchAbout }) => {
   fetchAbout();
   return (
     <div className="cv-container box">
@@ -41,7 +41,7 @@ const CvContainer = ({ curPage = 0, screenVersion, fetchAbout }) => {
           <BlockTitle inCvBlock text="Skills" />
           <Description description={skills} />
         </div>
-        {!screenVersion.desktop && <Portfolio mobile={screenVersion.mobile} />}
+        {!screenVersion.desktop && <Portfolio mobile={true} />}
         <div>
           <div className="cv-experience">
             <BlockTitle inCvBlock text="Experience" />
@@ -78,6 +78,7 @@ const CvContainer = ({ curPage = 0, screenVersion, fetchAbout }) => {
   );
 };
 const mapStateToProps = (state) => ({
+  curPage: state.main.page,
   screenVersion: state.main.screenVersion,
 });
 

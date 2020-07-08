@@ -2,20 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { Contacts } from "components";
-import { About } from "containers";
+import { About, Tools } from "containers";
 
 const InfoBar = ({ curPage }) => {
   return (
     <div className="contacts-about">
       <About />
       <Contacts show={curPage === 0} />
-      <div className="api-container flex-raw-container jc-sb">
-        <div className="api box flex-raw-container jc-center ai-center">
-          {/* <img src={ApiSvg} alt="Api" /> */}
-          <p>CV API</p>
-        </div>
-        <div className="pdf box"></div>
-      </div>
+      <Tools />
     </div>
   );
 };

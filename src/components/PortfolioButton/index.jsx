@@ -11,13 +11,14 @@ const PortfolioButton = ({ url, color, iconId, name, countInLine }) => {
 
   return (
     <a
+      data-testid="button-link"
       href={url}
       target="blank"
       className={className("portfolio__button", `portfolio__button--${color}`)}
       style={{ width: (100 / countInLine).toString() + "%" }}
     >
-      <Icon />
-      <p>{name}</p>
+      <Icon data-testid="button-icon" />
+      <p data-testid="button-text">{name}</p>
     </a>
   );
 };
