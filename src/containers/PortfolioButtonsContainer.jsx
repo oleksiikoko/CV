@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { PortfolioButton } from "components";
 
 const PortfolioButtonsContainer = ({ items }) => {
   return (
-    <div className="button-container df">
+    <div data-testid="buttons-container" className="button-container df">
       {items.map((item, index) => {
         return (
           <PortfolioButton
@@ -19,6 +20,10 @@ const PortfolioButtonsContainer = ({ items }) => {
       })}
     </div>
   );
+};
+
+PortfolioButtonsContainer.propTypes = {
+  items: PropTypes.array.isRequired,
 };
 
 export default PortfolioButtonsContainer;

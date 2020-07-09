@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
-import PortfolioButton from "./index";
+import { PortfolioButton } from "components";
 
 afterEach(cleanup);
 
