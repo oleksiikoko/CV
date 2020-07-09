@@ -1,25 +1,31 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import gifDurations from "gif-me-duration";
 import classNames from "classnames";
 
-import { getFirstElementByClassName } from "utils";
+import { calculateGifHeightInsideBlockWidth } from "utils";
+
+// import { gif } from "assets/testData/base64.gif.json";
 
 const GifPreview = ({ gifPreview, showPreview, onPreviewEnded, name }) => {
   const [previewGifHeight, setPreviewGifHeight] = useState(null);
   const [previewDuration, setPreviewDuration] = useState(0);
 
   if (previewGifHeight === null) {
-    let gifPreviewImg = new Image();
-    gifPreviewImg.onload = () => {
-      const portfolioItemWidth = getFirstElementByClassName("portfolio").width;
-      setPreviewGifHeight(
-        gifPreviewImg.height * (portfolioItemWidth / gifPreviewImg.width)
-      );
-      gifDurations(gifPreviewImg.src).then((result) => {
+    setPreviewGifHeight(
+      calculateGifHeightInsideBlockWidth(gifPreview, "portfolio")
+    );
+    gifDurations(gifPreview)
+      .then((result) => {
+        console.log(gifPreview);
         setPreviewDuration(result[0].duration);
-      });
-    };
-    gifPreviewImg.src = gifPreview;
+      })
+      .catch(() => setPreviewDuration(5000));
+    // // console.log(gifPreview);
+    // // console.log(gif);
+    // gifDurations(gif).then((result) => {
+    //   console.log(result[0].duration);
+    // });
   }
 
   if (showPreview) {
@@ -33,6 +39,7 @@ const GifPreview = ({ gifPreview, showPreview, onPreviewEnded, name }) => {
 
   return (
     <img
+      data-testid="gif-preview"
       className={classNames("portfolio__gif-preview", {
         "portfolio__gif-preview--show": showPreview,
       })}
@@ -42,6 +49,13 @@ const GifPreview = ({ gifPreview, showPreview, onPreviewEnded, name }) => {
       alt={`${name} preview`}
     />
   );
+};
+
+GifPreview.propTypes = {
+  gifPreview: PropTypes.string.isRequired,
+  showPreview: PropTypes.bool,
+  onPreviewEnded: PropTypes.func,
+  name: PropTypes.string,
 };
 
 export default GifPreview;

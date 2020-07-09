@@ -3,6 +3,7 @@ import React from "react";
 import { PortfolioItem } from "components";
 
 const stringToImgSource = (img) => {
+  console.log(img);
   if (img === undefined) return undefined;
   const base64 = btoa(
     new Uint8Array(img).reduce(
