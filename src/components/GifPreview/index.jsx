@@ -17,7 +17,7 @@ const GifPreview = ({ gifPreview, showPreview, onPreviewEnded, name }) => {
     );
     gifDurations(gifPreview)
       .then((result) => {
-        console.log(gifPreview);
+        // console.log(gifPreview);
         setPreviewDuration(result[0].duration);
       })
       .catch(() => setPreviewDuration(5000));
