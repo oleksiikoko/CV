@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import { PreviewButton, GifPreview } from "components";
 
@@ -23,6 +24,12 @@ const Preview = ({ _id, gif, name }) => {
       />
     </>
   );
+};
+
+Preview.propTypes = {
+  _id: PropTypes.string.isRequired,
+  gif: PropTypes.object,
+  name: PropTypes.string,
 };
 
 export default Preview;
