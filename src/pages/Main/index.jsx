@@ -6,6 +6,7 @@ import { Portfolio, CvContainer, InfoBar } from "containers";
 import "./Main.scss";
 
 const Main = ({ screenVersion }) => {
+  console.log(screenVersion);
   return (
     <div className="container">
       <div className="flex-raw-container jc-sa ai-center">

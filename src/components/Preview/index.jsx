@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import { PreviewButton, GifPreview } from "components";
 
-const Preview = ({ _id, gifPreview, name }) => {
+const Preview = ({ _id, gif, name }) => {
   const [showPreview, setShowPreview] = useState(false);
 
-  if (gifPreview === undefined) return <></>;
+  if (gif === undefined) return <></>;
 
   return (
     <>
@@ -16,7 +16,7 @@ const Preview = ({ _id, gifPreview, name }) => {
         active={showPreview}
       />
       <GifPreview
-        gifPreview={gifPreview}
+        gif={gif}
         showPreview={showPreview}
         onPreviewEnded={() => setShowPreview(false)}
         name={name}
