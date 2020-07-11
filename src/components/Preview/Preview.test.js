@@ -15,10 +15,8 @@ describe("GifPreview component ", () => {
     });
 
     it("PreviewButton rendered", () => {
-      act(() => {
-        const { queryByTestId } = rendered;
-        expect(queryByTestId("preview-button-container")).toBeTruthy();
-      });
+      const { queryByTestId } = rendered;
+      expect(queryByTestId("preview-button-container")).toBeTruthy();
     });
 
     it("img have className", () => {
@@ -28,7 +26,6 @@ describe("GifPreview component ", () => {
   });
 
   describe("<Preview _id='testId' active={false} />", () => {
-    const onPreviewEnded = jest.fn();
     let rendered;
 
     beforeEach(() => {
@@ -36,10 +33,8 @@ describe("GifPreview component ", () => {
     });
 
     it("PreviewButton rendered", () => {
-      act(() => {
-        const { queryByTestId } = rendered;
-        expect(queryByTestId("preview-button-container")).not.toBeTruthy();
-      });
+      const { queryByTestId } = rendered;
+      expect(queryByTestId("preview-button-container")).not.toBeTruthy();
     });
 
     it("img have className", () => {
