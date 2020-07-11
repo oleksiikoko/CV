@@ -4,7 +4,7 @@ import {
   FETCH_PORTFOLIO,
 } from "./types";
 
-const initialState = {
+export const initialState = {
   loading: false,
   items: [],
 };

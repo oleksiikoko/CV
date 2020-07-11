@@ -10,8 +10,8 @@ const saga = createSagaMiddleware();
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk, saga),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunk, saga)
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
