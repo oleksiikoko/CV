@@ -18,5 +18,6 @@ export function* sagaRequestSkills() {
 
 export async function fetchSkills() {
   const response = await skillsApi.getSkills();
+  console.log(response.data);
   return response.data;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { Contacts, Description, BlockTitle } from "components";
-import { CvBottomPageSwitcher, Portfolio, About } from "containers";
+import { CvBottomPageSwitcher, Portfolio, About, Skills } from "containers";
 
 import { fetchAbout } from "redux/About/actions";
 
@@ -37,6 +37,7 @@ const CvContainer = ({ curPage, screenVersion, fetchAbout }) => {
       </div>
       <div className="cv-content">
         {screenVersion.mobile && <About />}
+        <Skills />
         <div className="cv-skills">
           <BlockTitle inCvBlock text="Skills" />
           <Description description={skills} />

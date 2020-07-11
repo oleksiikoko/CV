@@ -1,0 +1,38 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
+import { Loader, Description, BlockTitle } from "components";
+
+const Skills = ({ skills, loading }) => {
+  return (
+    <div className="skills" data-testid="skills-container">
+      <BlockTitle inCvBlock text="Skills" />
+      {loading ? (
+        <Loader />
+      ) : (
+        <ul>
+          {skills.map((item, index) => {
+            return (
+              <li key={index}>
+                <Description description={item.text} />
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+Skills.propTypes = {
+  skills: PropTypes.array,
+  loading: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  skills: state.skills.items,
+  loading: state.skills.loading,
+});
+
+export default connect(mapStateToProps, null)(Skills);

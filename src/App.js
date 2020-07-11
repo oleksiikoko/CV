@@ -9,7 +9,16 @@ import {
   setTabletVersion,
   setMobileVersion,
 } from "redux/Main/actions";
+
 import { fetchPortfolio } from "redux/Portfolio/actions";
+import { fetchSkills } from "redux/Skills/actions";
+import { fetchAbout } from "redux/About/actions";
+import { fetchContacts } from "redux/Contacts/actions";
+import { fetchEnglish } from "redux/English/actions";
+import { fetchEducation } from "redux/Education/actions";
+import { fetchExperience } from "redux/Experience/actions";
+import { fetchMotivation } from "redux/Motivation/actions";
+
 import throttle from "./utils/throttle";
 
 function App({
@@ -17,6 +26,13 @@ function App({
   setTabletVersion,
   setMobileVersion,
   fetchPortfolio,
+  fetchSkills,
+  fetchAbout,
+  fetchContacts,
+  fetchEducation,
+  fetchEnglish,
+  fetchExperience,
+  fetchMotivation,
 }) {
   const setScreenVersion = () => {
     const width = window.innerWidth;
@@ -37,6 +53,14 @@ function App({
 
   // useEffect(() => {
   fetchPortfolio();
+  fetchSkills();
+  fetchAbout();
+  fetchContacts();
+  fetchEducation();
+  fetchEnglish();
+  fetchExperience();
+  fetchMotivation();
+
   // }, []);
 
   return (
@@ -52,6 +76,13 @@ const mapDispatchToProps = {
   setTabletVersion,
   setMobileVersion,
   fetchPortfolio,
+  fetchSkills,
+  fetchAbout,
+  fetchContacts,
+  fetchEducation,
+  fetchEnglish,
+  fetchExperience,
+  fetchMotivation,
 };
 
 export default connect(null, mapDispatchToProps)(App);
