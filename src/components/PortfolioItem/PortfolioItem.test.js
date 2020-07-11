@@ -1,5 +1,5 @@
 import React from "react";
-import { act, render, cleanup, screen } from "@testing-library/react";
+import { render, cleanup, screen } from "@testing-library/react";
 
 import { PortfolioItem } from "components";
 import { gif } from "assets/testData/base64.gif.json";
@@ -34,6 +34,7 @@ describe("render", () => {
         />
       );
     });
+
     it("portfolio-item container rendered", () => {
       expect(screen.queryByTestId("portfolio-item")).toBeTruthy();
     });
@@ -87,6 +88,7 @@ describe("render", () => {
         />
       );
     });
+
     it("portfolio-item container rendered", () => {
       expect(screen.queryByTestId("portfolio-item")).toBeTruthy();
     });

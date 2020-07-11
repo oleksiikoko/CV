@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { PortfolioItem } from "components";
 
 const PortfolioItems = ({ portfolioItems }) => {
   return (
-    <ul className="portfolio__ul">
+    <ul className="portfolio__ul" data-testid="portfolio-items">
       {portfolioItems.map((item, index) => {
         return (
           <PortfolioItem
@@ -19,6 +20,10 @@ const PortfolioItems = ({ portfolioItems }) => {
       })}
     </ul>
   );
+};
+
+PortfolioItem.PropTypes = {
+  portfolioItems: PropTypes.array.isRequired,
 };
 
 export default PortfolioItems;
