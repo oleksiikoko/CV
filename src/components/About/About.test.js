@@ -26,7 +26,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {
@@ -60,7 +60,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {
@@ -96,7 +96,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {
@@ -132,7 +132,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {
@@ -166,7 +166,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {
@@ -200,7 +200,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {
@@ -236,7 +236,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {
@@ -272,7 +272,7 @@ describe("About component tests: ", () => {
 
     it("title render(<BlockTitle />)", () => {
       const { queryByTestId } = rendered;
-      expect(queryByTestId("title")).toBeTruthy();
+      expect(queryByTestId("block-title")).toBeTruthy();
     });
 
     it("loader render", () => {

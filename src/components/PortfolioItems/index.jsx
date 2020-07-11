@@ -22,7 +22,7 @@ const PortfolioItems = ({ portfolioItems }) => {
   );
 };
 
-PortfolioItem.PropTypes = {
+PortfolioItems.propTypes = {
   portfolioItems: PropTypes.array.isRequired,
 };
 

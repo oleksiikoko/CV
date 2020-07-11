@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import { PortfolioItems, BlockTitle, Loader } from "components";
@@ -14,10 +15,10 @@ const Portfolio = ({ portfolioItems, loading, mobile, show }) => {
   });
 
   return (
-    <div className={portfolioContainerClassNames}>
+    <div className={portfolioContainerClassNames} data-testid="portfolio">
       <BlockTitle inCvBlock={mobile} text="Portfolio" />
-      <div className="portfolio">
-        {loading && portfolioItems.length === 0 ? (
+      <div className="portfolio" data-testid="portfoio-container">
+        {loading || portfolioItems.length === 0 ? (
           <Loader />
         ) : (
           <PortfolioItems portfolioItems={portfolioItems} />
@@ -25,6 +26,13 @@ const Portfolio = ({ portfolioItems, loading, mobile, show }) => {
       </div>
     </div>
   );
+};
+
+Portfolio.propTypes = {
+  portfolioItems: PropTypes.array.isRequired,
+  loading: PropTypes.bool,
+  mobile: PropTypes.bool,
+  show: PropTypes.bool,
 };
 
 export default Portfolio;

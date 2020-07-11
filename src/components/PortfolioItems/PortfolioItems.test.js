@@ -50,23 +50,21 @@ describe("render", () => {
     },
   ];
 
-  describe("gif exist", () => {
-    beforeEach(() => {
-      render(<PortfolioItems portfolioItems={portfolioItems} />);
-    });
+  beforeEach(() => {
+    render(<PortfolioItems portfolioItems={portfolioItems} />);
+  });
 
-    it("portfolio-items container rendered", () => {
-      expect(screen.queryByTestId("portfolio-items")).toBeTruthy();
-    });
+  it("portfolio-items container rendered", () => {
+    expect(screen.queryByTestId("portfolio-items")).toBeTruthy();
+  });
 
-    it("portfolio-items container have class", () => {
-      expect(screen.queryByTestId("portfolio-items")).toHaveClass(
-        "portfolio__ul"
-      );
-    });
+  it("portfolio-items container have class", () => {
+    expect(screen.queryByTestId("portfolio-items")).toHaveClass(
+      "portfolio__ul"
+    );
+  });
 
-    it("portfolio-items container have class", () => {
-      expect(screen.getAllByTestId("portfolio-item")).toHaveLength(2);
-    });
+  it("portfolio-items container have class", () => {
+    expect(screen.getAllByTestId("portfolio-item")).toHaveLength(2);
   });
 });

@@ -8,7 +8,7 @@ const BlockTitle = ({ inCvBlock, text, dash }) => {
   });
 
   return (
-    <p className={titleClassName} data-testid="title">
+    <p className={titleClassName} data-testid="block-title">
       {text}
       {inCvBlock ? (dash ? " - " : ":") : ""}
     </p>
