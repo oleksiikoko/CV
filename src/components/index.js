@@ -18,3 +18,4 @@ export { default as Experience } from "./Experience";
 export { default as ExperienceItem } from "./ExperienceItem";
 export { default as Education } from "./Education";
 export { default as CvContent } from "./CvContent";
+export { default as Header } from "./Header";
