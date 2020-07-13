@@ -13,3 +13,4 @@ export { default as GifPreview } from "./GifPreview";
 export { default as BlockTitle } from "./BlockTitle";
 export { default as Tools } from "./Tools";
 export { default as ToolItem } from "./ToolItem";
+export { default as Skills } from "./Skills";

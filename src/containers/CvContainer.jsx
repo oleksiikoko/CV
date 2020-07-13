@@ -4,31 +4,7 @@ import { connect } from "react-redux";
 import { Contacts, Description, BlockTitle } from "components";
 import { CvBottomPageSwitcher, Portfolio, About, Skills } from "containers";
 
-import { fetchAbout } from "redux/About/actions";
-
-const skills = `<ul>
-<li>
-  Understanding JavaScript strengths and weaknesses, <b>es5</b> 
-  and <b>es6</b> Standards
-</li>
-<li>Manipulating a DOM model </li>
-<li>Markup of adaptive, flexbox HTML pages using SCSS preprocessor following the BEM methodology</li>
-<li>
-  SPA application development using the React and React-router
-  framework, implementation of the Redux state management tool
-</li>
-<li>
-  Creating RestApi with Node.js, using Express and mongoose to
-  work with MongoDB
-</li>
-<li>
-  Writing clean, reusable, mutable code using OOP/OOD principles
-</li>
-<li>Networking protocols: TCP/IP, HTTP - Linux - Git</li>
-</ul>`;
-
-const CvContainer = ({ curPage, screenVersion, fetchAbout }) => {
-  fetchAbout();
+const CvContainer = ({ curPage, screenVersion }) => {
   return (
     <div className="cv-container box">
       <div className="cv-header">
@@ -38,10 +14,6 @@ const CvContainer = ({ curPage, screenVersion, fetchAbout }) => {
       <div className="cv-content">
         {screenVersion.mobile && <About />}
         <Skills />
-        <div className="cv-skills">
-          <BlockTitle inCvBlock text="Skills" />
-          <Description description={skills} />
-        </div>
         {!screenVersion.desktop && <Portfolio mobile={true} />}
         <div>
           <div className="cv-experience">
@@ -83,8 +55,8 @@ const mapStateToProps = (state) => ({
   screenVersion: state.main.screenVersion,
 });
 
-const mapDispatchToProps = {
-  fetchAbout,
-};
+// const mapDispatchToProps = {
+//   fetchAbout,
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CvContainer);
+export default connect(mapStateToProps, null)(CvContainer);

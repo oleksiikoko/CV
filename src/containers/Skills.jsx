@@ -2,25 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { Loader, Description, BlockTitle } from "components";
+import { Loader, Skills as SkillsBase, BlockTitle } from "components";
 
 const Skills = ({ skills, loading }) => {
   return (
     <div className="skills" data-testid="skills-container">
       <BlockTitle inCvBlock text="Skills" />
-      {loading ? (
-        <Loader />
-      ) : (
-        <ul>
-          {skills.map((item, index) => {
-            return (
-              <li key={index}>
-                <Description description={item.text} />
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      {loading ? <Loader /> : <SkillsBase skills={skills} />}
     </div>
   );
 };
