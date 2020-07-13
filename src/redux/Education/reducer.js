@@ -9,7 +9,7 @@ const initialState = {
   items: [],
 };
 
-export const portfolioReducer = (state = initialState, action) => {
+export const educationReducer = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_EDUCATION_LOADER:
       return { ...state, loading: true };

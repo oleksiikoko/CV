@@ -16,7 +16,7 @@ export const englishReducer = (state = initialState, action) => {
     case HIDE_ENGLISH_LOADER:
       return { ...state, loading: false };
     case FETCH_ENGLISH:
-      return { ...state, level: action.payload };
+      return { ...state, level: action.payload.level };
     default:
       return state;
   }

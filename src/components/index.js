@@ -16,3 +16,5 @@ export { default as ToolItem } from "./ToolItem";
 export { default as Skills } from "./Skills";
 export { default as Experience } from "./Experience";
 export { default as ExperienceItem } from "./ExperienceItem";
+export { default as Education } from "./Education";
+export { default as CvContent } from "./CvContent";
