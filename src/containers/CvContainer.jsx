@@ -2,7 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { Contacts, Description, BlockTitle } from "components";
-import { CvBottomPageSwitcher, Portfolio, About, Skills } from "containers";
+import {
+  CvBottomPageSwitcher,
+  Portfolio,
+  About,
+  Skills,
+  Experience,
+} from "containers";
 
 const CvContainer = ({ curPage, screenVersion }) => {
   return (
@@ -16,15 +22,7 @@ const CvContainer = ({ curPage, screenVersion }) => {
         <Skills />
         {!screenVersion.desktop && <Portfolio mobile={true} />}
         <div>
-          <div className="cv-experience">
-            <BlockTitle inCvBlock text="Experience" />
-            <p className="info-box__text">
-              Startup “Extracoin” - C++/Qt developer https://etalonium.io/ Jan
-              2019 - Dec 2019 - Decentralized application development -
-              Multithreaded code execution - Finding and preventing memory leaks
-              - Blockchain network support
-            </p>
-          </div>
+          <Experience />
           <div className="cv-education">
             <BlockTitle inCvBlock text="Education" />
             <Description

@@ -14,3 +14,5 @@ export { default as BlockTitle } from "./BlockTitle";
 export { default as Tools } from "./Tools";
 export { default as ToolItem } from "./ToolItem";
 export { default as Skills } from "./Skills";
+export { default as Experience } from "./Experience";
+export { default as ExperienceItem } from "./ExperienceItem";

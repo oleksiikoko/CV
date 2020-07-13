@@ -14,7 +14,7 @@ export const rootReducer = combineReducers({
   about: aboutReducer,
   contacts: contactsReducer,
   english: englishReducer,
-  experiece: experienceReducer,
+  experience: experienceReducer,
   motivation: motivationReducer,
   skills: skillsReducer,
 });

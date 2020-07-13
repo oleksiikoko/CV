@@ -1,0 +1,57 @@
+.experience-item {
+  padding-left: 7px;
+  p {
+    text-align: left;
+  }
+  ul {
+    text-align: left;
+    // text-indent: 20px;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    text-align: right;
+    // text-indent: 35px;
+    padding-right: 37px;
+  }
+
+  &__company {
+    font-size: 18px;
+    margin-left: 20px;
+    text-indent: 20px;
+    font-weight: 550;
+    color: black;
+
+    &::first-line {
+      text-indent: 0;
+    }
+  }
+
+  &__position {
+    // margin-top: 7px;
+    padding-left: 35px;
+    font-size: 20px;
+    font-weight: 300;
+    // font-style: italic;
+  }
+  &__date {
+    text-indent: 45px;
+    margin-bottom: 7px;
+    // font-size: 16px;
+    // font-style: italic;
+  }
+
+  // ul {
+  //   margin-top: 7px;
+  // }
+
+  &__tasks {
+    margin-top: 15px;
+    li {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  }
+}

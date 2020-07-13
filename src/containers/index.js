@@ -6,3 +6,4 @@ export { default as PortfolioButtonsContainer } from "./PortfolioButtonsContaine
 export { default as About } from "./About";
 export { default as Tools } from "./Tools";
 export { default as Skills } from "./Skills";
+export { default as Experience } from "./Experience";
