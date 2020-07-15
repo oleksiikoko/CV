@@ -49,9 +49,7 @@ function App({
     }
 
     const height = window.innerHeight;
-    console.log(height);
     if (height <= 850) {
-      console.log("flakkdsj");
       setLowHeightVersion(true);
     }
   };

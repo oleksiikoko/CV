@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { CvContent, Header } from "components";
-import { CvBottomPageSwitcher } from "containers";
+import { Header } from "components";
+import { CvBottomPageSwitcher, CvContent } from "containers";
 
 const CvContainer = ({ curPage, screenVersion }) => {
   return (
     <div className="cv-container box">
       <Header />
-      <CvContent screenVersion={screenVersion} />
+      <CvContent screenVersion={screenVersion} curPage={curPage} />
       <CvBottomPageSwitcher />
     </div>
   );

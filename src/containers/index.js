@@ -10,3 +10,5 @@ export { default as Experience } from "./Experience";
 export { default as Education } from "./Education";
 export { default as English } from "./English";
 export { default as Contacts } from "./Contacts";
+export { default as CvContent } from "./CvContent";
+export { default as Motivation } from "./Motivation";

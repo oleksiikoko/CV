@@ -13,7 +13,7 @@ import {
 
 const CvContent = ({ screenVersion }) => {
   return (
-    <div className="cv-content">
+    <>
       {screenVersion.mobile && <About />}
       <Skills />
       {!screenVersion.desktop && <Portfolio mobile={true} />}
@@ -21,7 +21,7 @@ const CvContent = ({ screenVersion }) => {
       <Education />
       <English />
       {screenVersion.mobile && <Contacts mobile={true} />}
-    </div>
+    </>
   );
 };
 

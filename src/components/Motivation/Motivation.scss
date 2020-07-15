@@ -1,0 +1,22 @@
+.motivation {
+  &__language {
+    padding: 10px 20px;
+
+    span {
+      font-size: 17px;
+      margin: 5px;
+
+      cursor: pointer;
+
+      p {
+        font-size: 13px;
+        display: inline;
+      }
+    }
+
+    &__active-btn {
+      color: #1483b8;
+      text-decoration: underline;
+    }
+  }
+}
