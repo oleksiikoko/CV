@@ -6,3 +6,4 @@ export { default as englishApi } from "./english";
 export { default as experienceApi } from "./experience";
 export { default as motivationApi } from "./motivation";
 export { default as skillsApi } from "./skills";
+export { default as sendMailApi } from "./sendMail";

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { getIcon } from "utils";
+import { sendMailApi } from "utils/api";
 
 import { ToolItem } from "components";
 
@@ -15,6 +16,11 @@ const Tools = () => {
     link.dispatchEvent(new MouseEvent("click"));
   };
 
+  const onSendEmail = () => {
+    let email = prompt("Enter your mail : ", "example@mail.com");
+    sendMailApi.sendMail(email);
+  };
+
   return (
     <div className="tools-container">
       <ToolItem
@@ -22,7 +28,11 @@ const Tools = () => {
         text="Download CV"
         onClick={downloadPdf}
       />
-      <ToolItem icon={SentMailSvg} text="Send CV to mail" />
+      <ToolItem
+        icon={SentMailSvg}
+        text="Send CV to mail"
+        onClick={onSendEmail}
+      />
 
       <a
         href="http://192.168.1.12:3002/download-pdf"

@@ -12,6 +12,10 @@
         font-size: 13px;
         display: inline;
       }
+
+      &:nth-child(2) {
+        padding-right: 97px;
+      }
     }
 
     &__active-btn {

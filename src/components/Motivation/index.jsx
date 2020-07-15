@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
@@ -14,7 +14,7 @@ const Motivation = ({ items }) => {
       <div className="motivation__language">
         {items.map((item, index) => {
           return (
-            <span key={index}>
+            <Fragment key={index}>
               <span
                 className={classNames(
                   curItem === index && "motivation__language__active-btn"
@@ -23,11 +23,11 @@ const Motivation = ({ items }) => {
                   setCurItem(index);
                 }}
               >
+                {index === 0 && <p>(recommended) </p>}
                 {item.language}
-                {index === 0 && <p>(recomended)</p>}
               </span>
               {index !== items.length - 1 && <>&bull;</>}
-            </span>
+            </Fragment>
           );
         })}
       </div>
