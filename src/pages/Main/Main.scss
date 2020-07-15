@@ -40,22 +40,13 @@
 
 .english {
   .title {
-    padding: 20px 0 20px 20px;
-    min-width: 124px;
+    padding: 20px 5px 20px 20px;
+    min-width: 127px;
   }
   p {
+    text-align: left;
     padding-top: 4px;
   }
-
-  .title {
-    padding-right: 4px;
-  }
-  // .description {
-  //   p {
-  //     text-indent: 5px;
-  //     margin: 0;
-  //   }
-  // }
 }
 
 @media screen and (max-width: 1200px) {
@@ -80,11 +71,16 @@
     }
   }
 
+  .english {
+    p {
+      padding-top: 23px;
+    }
+  }
+
   .contacts-about {
     width: 40%;
   }
 }
-
 @media screen and (max-width: 800px) {
   .cv {
     &-container {
