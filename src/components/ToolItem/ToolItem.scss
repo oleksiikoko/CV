@@ -1,78 +1,20 @@
-@keyframes right-slide {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 35%;
-  }
-}
-
-@keyframes left-slide-send {
-  0% {
-    right: -53%;
-  }
-  100% {
-    right: 0%;
-  }
-}
-
-@keyframes left-slide-download {
-  0% {
-    right: 0%;
-  }
-  100% {
-    right: 53%;
-  }
-}
-
-@keyframes left-slide-api {
-  0% {
-    right: 53%;
-  }
-  100% {
-    right: 106%;
-  }
-}
-
 .tool {
   position: relative;
-  height: 100%;
-  width: 49%;
+
+  height: 46%;
+  width: 100%;
 
   cursor: pointer;
 
   svg {
     height: 30px;
     width: 30px;
-    margin-left: 12px;
+    margin-left: 30px;
   }
 
   p {
-    margin: 0 0 0 9px;
+    margin: 0 0 0 16px;
     font-weight: 600;
     font-size: 16px;
-  }
-
-  &--hidden {
-    position: absolute;
-    right: -53%;
-  }
-
-  &--left-slide--send {
-    position: absolute;
-    animation: left-slide-send 1.5s;
-    right: 0%;
-  }
-
-  &--left-slide--download {
-    position: absolute;
-    animation: left-slide-download 1.5s;
-    right: 53%;
-  }
-
-  &--left-slide--api {
-    position: absolute;
-    animation: left-slide-api 1.5s;
-    right: 106%;
   }
 }

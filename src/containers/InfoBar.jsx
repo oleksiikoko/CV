@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { Contacts } from "components";
-import { About, Tools } from "containers";
+import { About, Tools, Contacts } from "containers";
 
 const InfoBar = ({ curPage }) => {
   return (

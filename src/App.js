@@ -18,6 +18,7 @@ import { fetchEnglish } from "redux/English/actions";
 import { fetchEducation } from "redux/Education/actions";
 import { fetchExperience } from "redux/Experience/actions";
 import { fetchMotivation } from "redux/Motivation/actions";
+import { setLowHeightVersion } from "./redux/Main/actions";
 
 import throttle from "./utils/throttle";
 
@@ -33,6 +34,7 @@ function App({
   fetchEnglish,
   fetchExperience,
   fetchMotivation,
+  setLowHeightVersion,
 }) {
   const setScreenVersion = () => {
     const width = window.innerWidth;
@@ -44,6 +46,13 @@ function App({
       setTabletVersion();
     } else if (width > 1200 && !screenVersion.desktop) {
       setDesktopVersion();
+    }
+
+    const height = window.innerHeight;
+    console.log(height);
+    if (height <= 850) {
+      console.log("flakkdsj");
+      setLowHeightVersion(true);
     }
   };
   const throttleResize = throttle(setScreenVersion, 1000);
@@ -83,6 +92,7 @@ const mapDispatchToProps = {
   fetchEnglish,
   fetchExperience,
   fetchMotivation,
+  setLowHeightVersion,
 };
 
 export default connect(null, mapDispatchToProps)(App);

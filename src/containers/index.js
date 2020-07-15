@@ -9,3 +9,4 @@ export { default as Skills } from "./Skills";
 export { default as Experience } from "./Experience";
 export { default as Education } from "./Education";
 export { default as English } from "./English";
+export { default as Contacts } from "./Contacts";

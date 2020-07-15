@@ -7,26 +7,31 @@ import { ToolItem } from "components";
 import "./Tools.scss";
 
 const Tools = () => {
-  const CvApiSvg = getIcon("api");
   const DownloadPdfSvg = getIcon("downloadPdf");
   const SentMailSvg = getIcon("sentMail");
+
+  const downloadPdf = () => {
+    let link = document.getElementById("download-pdf");
+    link.dispatchEvent(new MouseEvent("click"));
+  };
+
   return (
-    <div className="tools-container flex-raw-container jc-sb">
+    <div className="tools-container">
       <ToolItem
-        className="tool--left-slide--api"
-        icon={CvApiSvg}
-        text="CV API"
-      />
-      <ToolItem
-        className="tool--left-slide--download"
         icon={DownloadPdfSvg}
         text="Download CV"
+        onClick={downloadPdf}
       />
-      <ToolItem
-        className="tool--hidden tool--left-slide--send"
-        icon={SentMailSvg}
-        text="Send CV to mail"
-      />
+      <ToolItem icon={SentMailSvg} text="Send CV to mail" />
+
+      <a
+        href="http://192.168.1.12:3002/download-pdf"
+        id="download-pdf"
+        download="download-pdf"
+        style={{ display: "none" }}
+      >
+        download-btn
+      </a>
     </div>
   );
 };

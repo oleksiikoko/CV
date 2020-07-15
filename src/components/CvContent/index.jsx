@@ -8,7 +8,7 @@ import {
   Experience,
   Education,
   English,
-  // Contacts,
+  Contacts,
 } from "containers";
 
 const CvContent = ({ screenVersion }) => {
@@ -20,7 +20,7 @@ const CvContent = ({ screenVersion }) => {
       <Experience />
       <Education />
       <English />
-      {/* {screenVersion.mobile && <Contacts mobile={true} />} */}
+      {screenVersion.mobile && <Contacts mobile={true} />}
     </div>
   );
 };

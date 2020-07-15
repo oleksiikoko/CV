@@ -4,11 +4,13 @@ import {
   SET_DESKTOP_VERSION,
   SET_TABLET_VERSION,
   SET_MOBILE_VERSION,
+  SET_LOW_HEIGHT_VERSION,
 } from "./types";
 
 const initialState = {
   page: 0,
   screenVersion: { desktop: false, tablet: false, mobile: false },
+  lowHeightVersion: false,
 };
 
 export const mainReducer = (state = initialState, action) => {
@@ -23,6 +25,8 @@ export const mainReducer = (state = initialState, action) => {
       return { ...state, screenVersion: action.payload };
     case SET_MOBILE_VERSION:
       return { ...state, screenVersion: action.payload };
+    case SET_LOW_HEIGHT_VERSION:
+      return { ...state, lowHeightVersion: action.payload };
     default:
       return state;
   }

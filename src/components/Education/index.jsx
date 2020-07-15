@@ -1,13 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Description } from "components";
+
+import "./Education.scss";
+
 const Education = ({ items }) => {
   return items.map((item, index) => {
     return (
       <div className="education-item" key={index}>
-        <p>{item.text}</p>
+        <Description description={item.text} className="education-item__name" />
         {item.description && (
-          <p className="education-description">{item.description}</p>
+          <Description
+            description={item.description}
+            className="education-item__description"
+          />
         )}
       </div>
     );

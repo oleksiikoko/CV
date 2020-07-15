@@ -1,0 +1,22 @@
+.education-item {
+  padding: 0 20px 10px 20px;
+  p {
+    text-align: left;
+  }
+
+  &__name {
+    // padding-left: 20px;
+    font-size: 20px;
+    // font-weight: 300;
+  }
+
+  &__description {
+    // padding-left: 20px;
+    text-indent: 15px;
+
+    i {
+      color: #e93802;
+    }
+    // font-size: 20px;
+  }
+}

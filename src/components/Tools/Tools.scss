@@ -1,5 +1,8 @@
 .tools-container {
   position: relative;
-  height: 6%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 110px;
   width: 100%;
 }

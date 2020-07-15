@@ -4,6 +4,7 @@ import {
   SET_DESKTOP_VERSION,
   SET_TABLET_VERSION,
   SET_MOBILE_VERSION,
+  SET_LOW_HEIGHT_VERSION,
 } from "./types";
 
 export function setCvPage() {
@@ -38,5 +39,12 @@ export function setMobileVersion() {
   return {
     type: SET_MOBILE_VERSION,
     payload: { desktop: false, tablet: false, mobile: true },
+  };
+}
+
+export function setLowHeightVersion(value) {
+  return {
+    type: SET_LOW_HEIGHT_VERSION,
+    payload: value,
   };
 }
