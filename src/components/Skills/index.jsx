@@ -7,7 +7,7 @@ import "./Skills.scss";
 
 const Skills = ({ skills }) => {
   return (
-    <ul data-testid="skills-list">
+    <ul data-testid="skills">
       {skills.map((item, index) => {
         return (
           <li key={index}>
