@@ -10,8 +10,8 @@ const Motivation = ({ items }) => {
   const [curItem, setCurItem] = useState(0);
 
   return (
-    <div className="motivation">
-      <div className="motivation__language">
+    <div className="motivation" data-testid="motivation">
+      <div className="motivation__language" data-testid="motivation__language">
         {items.map((item, index) => {
           return (
             <Fragment key={index}>
@@ -20,7 +20,7 @@ const Motivation = ({ items }) => {
                   curItem === index && "motivation__language__active-btn"
                 )}
                 onClick={() => {
-                  setCurItem(index);
+                  curItem !== index && setCurItem(index);
                 }}
               >
                 {index === 0 && <p>(recommended) </p>}
