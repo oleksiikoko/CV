@@ -1,13 +1,10 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import "./BottomPageSwitcher.scss";
 
-const BottomPageSwitcher = ({
-  states = [{ name: "CV" }, { name: "Motivation" }],
-  onTabChange,
-  curTab = 0,
-}) => {
+const BottomPageSwitcher = ({ states, onTabChange, curTab }) => {
   const [curTabState, setCurTabState] = useState(curTab);
 
   const clickHandler = (changeTo) => {
@@ -18,10 +15,11 @@ const BottomPageSwitcher = ({
   };
 
   return (
-    <div className="bottom-page-switcher">
+    <div className="bottom-page-switcher" data-testid="bottom-page-switcher">
       {states.map((item, index) => {
         return (
           <div
+            data-testid="bottom-page-switcher__btn"
             key={index}
             className={classNames({
               "bottom-page-switcher--active": index === curTabState,
@@ -35,6 +33,12 @@ const BottomPageSwitcher = ({
       })}
     </div>
   );
+};
+
+BottomPageSwitcher.propTypes = {
+  states: PropTypes.array.isRequired,
+  onTabChange: PropTypes.func,
+  curTab: PropTypes.number,
 };
 
 export default BottomPageSwitcher;
