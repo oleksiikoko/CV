@@ -11,7 +11,7 @@ const ExperienceItem = ({ item }) => {
   const linkName = item.link.replace("https://", "").replace("/", "");
 
   return (
-    <div className="experience-item">
+    <div className="experience-item" data-testid="experience-item">
       <p className="experience-item__position">{item.position}</p>
       <p className="experience-item__date">{`${formattedDateStart} - ${formattedDateEnd}`}</p>
       <p className="experience-item__company">{item.companyName}</p>
@@ -20,13 +20,15 @@ const ExperienceItem = ({ item }) => {
           return <li key={index}>{item.task}</li>;
         })}
       </ul>
-      <a href={item.link}>{linkName}</a>
+      <a href={item.link} data-testid="company-link">
+        {linkName}
+      </a>
     </div>
   );
 };
 
 ExperienceItem.propTypes = {
-  item: PropTypes.object,
+  item: PropTypes.object.isRequired,
 };
 
 export default ExperienceItem;

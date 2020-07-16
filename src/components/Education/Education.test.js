@@ -1,12 +1,11 @@
 import React from "react";
-import { render, cleanup, fireEvent, screen } from "@testing-library/react";
+import { render, cleanup, screen } from "@testing-library/react";
 
 import { Education } from "components";
-import { act } from "react-dom/test-utils";
 
 afterEach(cleanup);
 
-describe("BottomPageSwitcher", () => {
+describe("Education", () => {
   const items = [
     {
       text: "Unit Factory pool",
