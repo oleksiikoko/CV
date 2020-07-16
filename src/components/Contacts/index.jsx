@@ -6,16 +6,20 @@ import { getIcon } from "utils";
 import "./Contacts.scss";
 
 const Contacts = ({ items }) => {
-  return items.map((item, index) => {
-    const Icon = getIcon(item.iconId);
+  return (
+    <>
+      {items.map((item, index) => {
+        const Icon = getIcon(item.iconId);
 
-    return (
-      <div key={index} className="contact-item df">
-        <Icon />
-        <p>{item.contact}</p>
-      </div>
-    );
-  });
+        return (
+          <div key={index} className="contact-item df" data-testid="contacts">
+            <Icon />
+            <p>{item.contact}</p>
+          </div>
+        );
+      })}
+    </>
+  );
 };
 
 Contacts.propTypes = {
