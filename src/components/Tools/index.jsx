@@ -22,7 +22,7 @@ const Tools = () => {
   };
 
   return (
-    <div className="tools-container">
+    <div className="tools-container" data-testid="tools">
       <ToolItem
         icon={DownloadPdfSvg}
         text="Download CV"
@@ -40,9 +40,12 @@ const Tools = () => {
         download="download-pdf"
         style={{ display: "none" }}
       >
-        download-btn
+        download-pdf
       </a>
     </div>
   );
 };
+
+Tools.propTypes = {};
+
 export default Tools;
