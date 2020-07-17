@@ -35,6 +35,8 @@
     // flex: 1 0 auto;
     // position: relative;
     overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 

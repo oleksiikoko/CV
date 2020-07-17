@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { connect } from "react-redux";
 
-import { Contacts as ContactsBase, BlockTitle } from "components";
+import { Contacts as ContactsBase, BlockTitle, Loader } from "components";
 import { getIcon } from "utils";
-import { Loader } from "../components";
 
 const Contacts = ({ items, mobile, show, expand, loading }) => {
   const [expandState, setExpandState] = useState(expand);
@@ -24,8 +23,12 @@ const Contacts = ({ items, mobile, show, expand, loading }) => {
   const DownArrowSvg = getIcon("downArrow");
 
   return (
-    <div className={contactsContainerClassNames}>
+    <div
+      className={contactsContainerClassNames}
+      data-testid="contacts-container"
+    >
       <div
+        data-testid="contacts-expand"
         className={classNames(
           "contact-title",
           mobile && "contact-title--in-cv"
@@ -33,7 +36,7 @@ const Contacts = ({ items, mobile, show, expand, loading }) => {
         onClick={() => setExpandState(!expandState)}
       >
         <BlockTitle text="Contacts" inCvBlock={mobile} />
-        {!mobile && <DownArrowSvg />}
+        {!mobile && <DownArrowSvg data-test-id="svg-arrow" />}
       </div>
       {loading ? <Loader /> : <ContactsBase items={items} />}
     </div>
