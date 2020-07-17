@@ -14,7 +14,7 @@ import {
 
 const CvContent = ({ screenVersion }) => {
   return (
-    <span data-testid="cv-content">
+    <>
       {screenVersion.mobile && <About />}
       <Skills />
       {!screenVersion.desktop && <Portfolio mobile={true} />}
@@ -27,7 +27,7 @@ const CvContent = ({ screenVersion }) => {
           <Tools />
         </>
       )}
-    </span>
+    </>
   );
 };
 
