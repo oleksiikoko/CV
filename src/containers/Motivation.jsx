@@ -5,7 +5,11 @@ import { connect } from "react-redux";
 import { Loader, Motivation as MotivationBase } from "components";
 
 const Motivation = ({ items, loading }) => {
-  return loading ? <Loader /> : <MotivationBase items={items} />;
+  return (
+    <span data-testid="motivation-container">
+      {loading ? <Loader /> : <MotivationBase items={items} />};
+    </span>
+  );
 };
 
 Motivation.propTypes = {

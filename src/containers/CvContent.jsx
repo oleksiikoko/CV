@@ -6,7 +6,7 @@ import { Motivation } from "containers";
 
 const CvContent = ({ curPage, screenVersion }) => {
   return (
-    <div className="cv-content">
+    <div className="cv-content-container">
       {curPage === 0 && <CvContentBase screenVersion={screenVersion} />}
       {curPage === 1 && <Motivation />}
     </div>
