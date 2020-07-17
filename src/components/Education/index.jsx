@@ -7,7 +7,7 @@ import "./Education.scss";
 
 const Education = ({ items }) => {
   return (
-    <>
+    <span data-testid="education">
       {items.map((item, index) => {
         return (
           <div
@@ -28,7 +28,7 @@ const Education = ({ items }) => {
           </div>
         );
       })}
-    </>
+    </span>
   );
 };
 

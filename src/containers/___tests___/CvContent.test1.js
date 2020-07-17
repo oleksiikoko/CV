@@ -2,33 +2,28 @@ import React from "react";
 import { screen, render } from "@testing-library/react";
 
 import { CvContent } from "containers";
-
-let initialState;
+import { renderWithRedux } from "redux/test-utils";
 
 it("CvContent cv", () => {
-  initialState = {
-    main: {
-      page: 0,
-      screenVersion: { mobile: false, tablet: false, desktop: false },
-    },
-  };
-  render(
+  renderWithRedux(
     <CvContent
-      page={0}
+      curPage={0}
       screenVersion={{ mobile: false, tablet: false, desktop: false }}
     />
   );
   expect(screen.queryByTestId("cv-content-container")).toBeTruthy();
   expect(screen.queryByTestId("cv-content")).toBeTruthy();
+  expect(screen.queryByTestId("motivation-container")).not.toBeTruthy();
 });
 
 it("CvContent motivation", () => {
-  render(
+  renderWithRedux(
     <CvContent
-      page={1}
+      curPage={1}
       screenVersion={{ mobile: false, tablet: false, desktop: false }}
     />
   );
   expect(screen.queryByTestId("cv-content-container")).toBeTruthy();
+  expect(screen.queryByTestId("cv-content")).not.toBeTruthy();
   expect(screen.queryByTestId("motivation-container")).toBeTruthy();
 });
