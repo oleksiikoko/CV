@@ -7,7 +7,7 @@ import { CvBottomPageSwitcher, CvContent } from "containers";
 
 const CvContainer = ({ curPage, screenVersion }) => {
   return (
-    <div className="cv-container box">
+    <div className="cv-container box" data-testid="cv-container">
       <Header />
       <CvContent screenVersion={screenVersion} curPage={curPage} />
       <CvBottomPageSwitcher />

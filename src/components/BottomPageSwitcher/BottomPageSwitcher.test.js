@@ -41,14 +41,12 @@ describe("BottomPageSwitcher", () => {
     expect(screen.queryAllByTestId("bottom-page-switcher__btn")[0]).toHaveClass(
       "bottom-page-switcher--active"
     );
-    expect(screen.queryByText("testName1")).toBeTruthy();
   });
 
   it("disabled button", () => {
     expect(
       screen.queryAllByTestId("bottom-page-switcher__btn")[1]
     ).not.toHaveClass("bottom-page-switcher--active");
-    expect(screen.queryByText("testName2")).toBeTruthy();
   });
 
   it("active button click", () => {
@@ -62,20 +60,8 @@ describe("BottomPageSwitcher", () => {
     expect(
       screen.queryAllByTestId("bottom-page-switcher__btn")[1]
     ).not.toHaveClass("bottom-page-switcher--active");
-    expect(onTabChange).toHaveBeenCalledTimes(0);
-  });
-
-  it("disabled button click", () => {
-    act(() => {
-      fireEvent.click(screen.queryAllByTestId("bottom-page-switcher__btn")[1]);
-    });
-
-    expect(
-      screen.queryAllByTestId("bottom-page-switcher__btn")[0]
-    ).not.toHaveClass("bottom-page-switcher--active");
-    expect(screen.queryAllByTestId("bottom-page-switcher__btn")[1]).toHaveClass(
+    expect(screen.queryAllByTestId("bottom-page-switcher__btn")[0]).toHaveClass(
       "bottom-page-switcher--active"
     );
-    expect(onTabChange).toHaveBeenCalledTimes(1);
   });
 });

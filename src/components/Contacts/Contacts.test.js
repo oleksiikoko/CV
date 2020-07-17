@@ -6,7 +6,7 @@ import { act } from "react-dom/test-utils";
 
 afterEach(cleanup);
 
-describe("BottomPageSwitcher", () => {
+describe("Contancts", () => {
   const items = [
     {
       iconId: "phone",
@@ -33,14 +33,8 @@ describe("BottomPageSwitcher", () => {
   });
 
   it("container have class", () => {
-    screen.getAllByTestId("contacts").map((item) => {
-      expect(item).toHaveClass("contact-item df");
-    });
-  });
-
-  it("contacts have text", () => {
-    items.map((item) => {
-      expect(screen.getByText(item.contact)).toBeTruthy();
-    });
+    screen
+      .getAllByTestId("contacts")
+      .map((item) => expect(item).toHaveClass("contact-item df"));
   });
 });

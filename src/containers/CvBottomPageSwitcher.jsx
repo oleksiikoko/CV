@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { setCvPage, setMotivationPage } from "redux/Main/actions";
@@ -25,6 +26,12 @@ const CvBottomPageSwitcher = ({ curPage, setCvPage, setMotivationPage }) => {
       curTab={curPage}
     />
   );
+};
+
+CvBottomPageSwitcher.propTypes = {
+  curPage: PropTypes.number,
+  setCvPage: PropTypes.func,
+  setMotivationPage: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
