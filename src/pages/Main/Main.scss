@@ -10,11 +10,10 @@
 .contacts-about {
   height: 96%;
   width: 22%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  // overflow: hidden;
   align-items: center;
 }
 
@@ -32,8 +31,6 @@
   &-content-container {
     scroll-behavior: smooth;
     height: calc(100% - 173px);
-    // flex: 1 0 auto;
-    // position: relative;
     overflow: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -84,7 +81,7 @@
       width: 96%;
     }
 
-    &-content {
+    &-content-container {
       height: calc(100% - 153px);
     }
   }
