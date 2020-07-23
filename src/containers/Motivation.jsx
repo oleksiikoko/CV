@@ -7,7 +7,7 @@ import { Loader, Motivation as MotivationBase } from "components";
 const Motivation = ({ items, loading }) => {
   return (
     <span data-testid="motivation-container">
-      {loading ? <Loader /> : <MotivationBase items={items} />};
+      {loading ? <Loader /> : <MotivationBase items={items} />}
     </span>
   );
 };

@@ -5,14 +5,14 @@
   }
   100% {
     right: 0;
-    bottom: 43%;
+    bottom: 37%;
   }
 }
 
 @keyframes bottom-slide {
   0% {
     right: 0;
-    bottom: 43%;
+    bottom: 37%;
   }
   100% {
     right: 0;
@@ -44,7 +44,7 @@
   &--animation {
     animation: top-slide 1.5s;
     // right: 120%;
-    bottom: 43%;
+    bottom: 37%;
     position: relative;
     z-index: 0;
   }

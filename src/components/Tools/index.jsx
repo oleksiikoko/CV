@@ -35,7 +35,7 @@ const Tools = () => {
       />
 
       <a
-        href="http://192.168.1.12:3002/download-pdf"
+        href="https://kovalchuk-cv.herokuapp.com/download-pdf"
         id="download-pdf"
         download="download-pdf"
         style={{ display: "none" }}

@@ -17,11 +17,12 @@ const CvBottomPageSwitcher = ({ curPage, setCvPage, setMotivationPage }) => {
       default:
         break;
     }
+    document.getElementById("cv-content-container").scrollTo(0, 0);
   };
 
   return (
     <BottomPageSwitcher
-      states={[{ name: "CV" }, { name: "Motivation" }]}
+      states={[{ name: "CV" }, { name: "Motivation(Essay)" }]}
       onTabChange={onTabChange}
       curTab={curPage}
     />
