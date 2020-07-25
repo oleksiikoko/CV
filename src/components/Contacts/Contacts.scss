@@ -32,11 +32,12 @@
 
   a {
     text-decoration: none;
-    margin: 3px 0 0 11px;
+    margin: 6px 0 0 11px;
     color: black;
 
     &:hover {
-      font-weight: bold;
+      font-weight: 550;
+      text-decoration: underline;
     }
   }
 }
@@ -46,6 +47,10 @@
   padding-bottom: 20px;
   width: 100%;
   background-color: #fff;
+
+  .title {
+    cursor: pointer;
+  }
 
   &--animation {
     animation: top-slide 1.5s;
