@@ -14,7 +14,9 @@ const Contacts = ({ items }) => {
         return (
           <div key={index} className="contact-item df" data-testid="contacts">
             <Icon />
-            <a href={item.href}>{item.contact}</a>
+            <a href={item.href} target="_blank">
+              {item.contact}
+            </a>
           </div>
         );
       })}
