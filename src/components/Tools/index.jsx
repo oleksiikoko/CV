@@ -17,7 +17,7 @@ const Tools = () => {
   };
 
   const onSendEmail = () => {
-    let email = prompt("Enter your mail : ", "example@mail.com");
+    let email = prompt("Enter your mail : ");
     sendMailApi.sendMail(email);
   };
 
